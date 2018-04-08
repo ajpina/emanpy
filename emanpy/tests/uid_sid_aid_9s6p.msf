@@ -1,0 +1,225 @@
+{
+  "machine" : {
+    "type" : "SPM",
+    "stator" : {
+      "type" : "StandardOuter",
+      "oSr" : 42.5e-3,
+      "iSr" : 18.98e-3,
+      "Ns" : 9,
+      "Sl" : 36.5e-3,
+      "slots" : {
+        "type": "type0",
+        "dimension": [
+          {
+            "SOpos": 20.0,
+            "Spos": 20.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          },
+          {
+            "SOpos": 60.0,
+            "Spos": 60.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          },
+          {
+            "SOpos": 100.0,
+            "Spos": 100.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          },
+          {
+            "SOpos": 140.0,
+            "Spos": 140.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          },
+          {
+            "SOpos": 180.0,
+            "Spos": 180.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          },
+          {
+            "SOpos": 220.0,
+            "Spos": 220.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          },
+          {
+            "SOpos": 260.0,
+            "Spos": 260.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          },
+          {
+            "SOpos": 300.0,
+            "Spos": 300.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          },
+          {
+            "SOpos": 340.0,
+            "Spos": 340.0,
+            "h0": 0.89e-3,
+            "h1": 1.5e-3,
+            "h2": 18.5e-3,
+            "h3": 1e-3,
+            "w0": 2.55e-3,
+            "w1": 6.4e-3,
+            "w2": 16.4e-3
+          }
+        ]
+      },
+      "material" : {
+        "BHcurve" : [
+          {"B" : 0.0, "H" : 0.0},
+          {"B" : 1.0, "H" : 1.0}
+        ],
+        "resistivity" : 1e-4
+      },
+      "winding" : {
+        "material" : {
+          "BHcurve" : null,
+          "resistivity" : 1.724e-8
+        },
+        "Layers" : 2,
+        "type" : "concentrated",
+        "Conn" : "wye",
+        "NoPhases" : 3,
+        "Cseries" : 1,
+        "Cparallel" : 3,
+        "Cturns" : 22,
+        "wih" : 1,
+        "condDiam" : 1.52e-3,
+        "Cpitch" : 1,
+        "CM" : {
+          "CM1" : [
+            {"A" : 0, "B" : 1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : 1, "D" : null, "E" : null, "F" : null },
+            {"A" : 1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : 1, "D" : null, "E" : null, "F" : null },
+            {"A" : 1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : 1, "D" : null, "E" : null, "F" : null },
+            {"A" : 1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null }
+          ],
+          "CM2" : [
+            {"A" : -1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : -1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : -1, "D" : null, "E" : null, "F" : null },
+            {"A" : -1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : -1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : -1, "D" : null, "E" : null, "F" : null },
+            {"A" : -1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : -1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : -1, "D" : null, "E" : null, "F" : null }
+          ]
+        }
+      }
+    },
+    "rotor" : {
+      "type" : "StandardInner",
+      "oRr" : 15.2e-3,
+      "iRr" : 6e-3,
+      "pp" : 3,
+      "Rl" : 36.5e-3,
+      "magnets" : {
+        "type" : "Arc",
+        "magnetization" : "Parallel",
+        "material" : {
+           "BHcurve" : null,
+           "resistivity" : 1e-6,
+           "Br" : 1.21,
+           "mur" : 1.071
+        },
+        "dimension" : [
+          {
+            "Ml" : 2.98e-3,
+            "Mw" : 13.6e-3,
+            "Mps" : 1.0,
+            "iMr" : 18.18e-3,
+            "delta" : 0
+          },
+          {
+            "Ml" : 2.98e-3,
+            "Mw" : 13.6e-3,
+            "Mps" : 1.0,
+            "iMr" : 18.18e-3,
+            "delta" : 0
+          },
+          {
+            "Ml" : 2.98e-3,
+            "Mw" : 13.6e-3,
+            "Mps" : 1.0,
+            "iMr" : 18.18e-3,
+            "delta" : 0
+          },
+          {
+            "Ml" : 2.98e-3,
+            "Mw" : 13.6e-3,
+            "Mps" : 1.0,
+            "iMr" : 18.18e-3,
+            "delta" : 0
+          },
+          {
+            "Ml" : 2.98e-3,
+            "Mw" : 13.6e-3,
+            "Mps" : 1.0,
+            "iMr" : 18.18e-3,
+            "delta" : 0
+          },
+          {
+            "Ml" : 2.98e-3,
+            "Mw" : 13.6e-3,
+            "Mps" : 1.0,
+            "iMr" : 18.18e-3,
+            "delta" : 0
+          }
+        ]
+      },
+      "init_pos" : -30.0
+    }
+  }
+}

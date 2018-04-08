@@ -1,0 +1,286 @@
+{
+  "UID" : "xxx",
+  "SID" : "yyy",
+  "AID" : "zzz",
+  "machine" : {
+    "type" : "InnerRotorSPM",
+    "stator" : {
+      "oSr" : 52.5e-3,
+      "iSr" : 30.7e-3,
+      "Ns" : 12,
+      "Sl" : 51e-3,
+      "slotType" : "type0",
+      "slots" : [
+        {
+          "SOpos" : 15.0,
+          "Spos" : 15.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 45.0,
+          "Spos" : 45.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 75.0,
+          "Spos" : 75.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 105.0,
+          "Spos" : 105.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 135.0,
+          "Spos" : 135.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 165.0,
+          "Spos" : 165.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 195.0,
+          "Spos" : 195.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 225.0,
+          "Spos" : 225.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 255.0,
+          "Spos" : 255.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 285.0,
+          "Spos" : 285.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 315.0,
+          "Spos" : 315.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        },
+        {
+          "SOpos" : 345.0,
+          "Spos" : 345.0,
+          "h0" : 1e-3,
+          "h1" : 1.75e-3,
+          "h2" : 12.55e-3,
+          "h3" : 1e-3,
+          "w0" : 2.5e-3,
+          "w1" : 7.9e-3,
+          "w2" : 12.1e-3
+        }
+      ],
+      "material" : {
+        "BHcurve" : [
+          {"B" : 0.0, "H" : 0.0},
+          {"B" : 1.0, "H" : 1.0}
+        ],
+        "resistivity" : 1e-4
+      },
+      "winding" : {
+        "material" : {
+          "BHcurve" : null,
+          "resistivity" : 1.724e-8
+        },
+        "Layers" : 2,
+        "Type" : "wye",
+        "NoPhases" : 3,
+        "Cseries" : 1,
+        "Cparallel" : 4,
+        "Cturns" : 31,
+        "wih" : 2,
+        "condDiam" : 1.2903e-3,
+        "Cpitch" : 1,
+        "CM" : {
+          "CM1" : [
+            {"A" : 0, "B" : 1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : 1, "D" : null, "E" : null, "F" : null },
+            {"A" : 1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : 1, "D" : null, "E" : null, "F" : null },
+            {"A" : 1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : 1, "D" : null, "E" : null, "F" : null },
+            {"A" : 1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : 1, "D" : null, "E" : null, "F" : null },
+            {"A" : 1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null }
+          ],
+          "CM2" : [
+            {"A" : -1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : -1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : -1, "D" : null, "E" : null, "F" : null },
+            {"A" : -1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : -1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : -1, "D" : null, "E" : null, "F" : null },
+            {"A" : -1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : -1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : -1, "D" : null, "E" : null, "F" : null },
+            {"A" : -1, "B" : 0, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : -1, "C" : 0, "D" : null, "E" : null, "F" : null },
+            {"A" : 0, "B" : 0, "C" : -1, "D" : null, "E" : null, "F" : null }
+          ]
+        }
+      }
+    },
+    "rotor" : {
+       "oRr" : 26.25e-3,
+       "iRr" : 6e-3,
+       "pp" : 4,
+       "Rl" : 51e-3,
+       "magnets" : {
+          "magType" : 0,
+          "material" : {
+             "BHcurve" : null,
+             "resistivity" : 1e-6,
+             "Br" : 1.38,
+             "mur" : 1.07
+          },
+          "dimension" : [
+             {
+                "Ml" : 3.7e-3,
+                "Mw" : 11.0e-3,
+                "Mps" : 1.0,
+                "iMr" : 18.2e-3,
+                "delta" : 0
+             },
+             {
+                "Ml" : 3.7e-3,
+                "Mw" : 11.0e-3,
+                "Mps" : 1.0,
+                "iMr" : 18.2e-3,
+                "delta" : 0
+             },
+             {
+                "Ml" : 3.7e-3,
+                "Mw" : 11.0e-3,
+                "Mps" : 1.0,
+                "iMr" : 18.2e-3,
+                "delta" : 0
+             },
+             {
+                "Ml" : 3.7e-3,
+                "Mw" : 11.0e-3,
+                "Mps" : 1.0,
+                "iMr" : 18.2e-3,
+                "delta" : 0
+             },
+             {
+                "Ml" : 3.7e-3,
+                "Mw" : 11.0e-3,
+                "Mps" : 1.0,
+                "iMr" : 18.2e-3,
+                "delta" : 0
+             },
+             {
+                "Ml" : 3.7e-3,
+                "Mw" : 11.0e-3,
+                "Mps" : 1.0,
+                "iMr" : 18.2e-3,
+                "delta" : 0
+             },
+             {
+                "Ml" : 3.7e-3,
+                "Mw" : 11.0e-3,
+                "Mps" : 1.0,
+                "iMr" : 18.2e-3,
+                "delta" : 0
+             },
+             {
+                "Ml" : 3.7e-3,
+                "Mw" : 11.0e-3,
+                "Mps" : 1.0,
+                "iMr" : 18.2e-3,
+                "delta" : 0
+             }
+          ]
+       },
+       "init_pos" : -22.5
+    }
+  },
+  "analysis" : {
+    "noLoad" : {
+       "speed" : 1000.0
+    },
+    "ripple" : {
+       "speed" : 1.0,
+       "current" : 100.0,
+       "voltage" : null,
+       "gamma" : 0.0
+    }
+  }
+}

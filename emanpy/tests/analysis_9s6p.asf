@@ -1,0 +1,14 @@
+{
+  "analysis" : {
+    "solver" : "subdomain",
+    "noLoad" : {
+       "speed" : 1000.0
+    },
+    "ripple" : {
+       "speed" : 1.0,
+       "current" : 130.0,
+       "voltage" : null,
+       "gamma" : 0.0
+    }
+  }
+}

@@ -1,0 +1,1032 @@
+2017-05-10 15:39:06,812 - [AA_SPM] INFO: ('Solving time is ', 2.6348494483965466, 's')
+2017-05-10 15:39:06,812 - [AA_SPM] INFO: ('Total time is ', 2.6407856939561065, 's')
+2017-05-10 15:42:59,411 - [AA_SPM] INFO: Solving time is 2.227831sec
+2017-05-10 15:42:59,413 - [AA_SPM] INFO: ('Total time is ', 2.232328340144739, 's')
+2017-05-10 15:55:47,976 - [AA_SPM] INFO: Solving time is 2.540758sec
+2017-05-10 15:55:47,976 - [AA_SPM] INFO: Total time is 2.543072sec
+2017-05-10 16:15:52,619 - [root] DEBUG: [SPM] Magnet Positions: [ 0.74804736  0.74804736  0.74804736  0.74804736  0.74804736  0.74804736
+  0.74804736  0.74804736  0.74804736  0.74804736]
+2017-05-10 16:15:52,619 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:15:52,619 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:15:55,119 - [root] INFO: [AA_SPM] Solving time is 2.497133sec
+2017-05-10 16:15:55,119 - [root] INFO: [AA_SPM] Total time is 2.499353sec
+2017-05-10 16:28:10,532 - [root] DEBUG: [SPM] Magnet Positions: [ 0.74804736  0.74804736  0.74804736  0.74804736  0.74804736  0.74804736
+  0.74804736  0.74804736  0.74804736  0.74804736]
+2017-05-10 16:28:10,533 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:28:10,535 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:28:13,214 - [root] INFO: [AA_SPM] Solving time is 2.671418sec
+2017-05-10 16:28:13,214 - [root] INFO: [AA_SPM] Total time is 2.675228sec
+2017-05-10 16:28:13,224 - [root] INFO: Magnet Flux = 0.007279
+2017-05-10 16:28:13,224 - [root] INFO: Lmq = 0.000030
+2017-05-10 16:28:13,224 - [root] INFO: Self Inductance (AirGap) = 0.000029
+2017-05-10 16:28:13,224 - [root] INFO: Mutual Inductance (AirGap) = -0.000001
+2017-05-10 16:28:13,224 - [root] INFO: End winding Leakage = 0.000000
+2017-05-10 16:28:30,486 - [root] DEBUG: [SPM] Magnet Positions: [ 0.74804736  0.74804736  0.74804736  0.74804736  0.74804736  0.74804736
+  0.74804736  0.74804736  0.74804736  0.74804736]
+2017-05-10 16:28:30,486 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:28:30,486 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:28:33,039 - [root] INFO: [AA_SPM] Solving time is 2.554293sec
+2017-05-10 16:28:33,039 - [root] INFO: [AA_SPM] Total time is 2.557994sec
+2017-05-10 16:28:33,039 - [root] INFO: Magnet Flux = 0.007279
+2017-05-10 16:28:33,039 - [root] INFO: Lmq = 0.000030
+2017-05-10 16:28:33,039 - [root] INFO: Self Inductance (AirGap) = 0.000029
+2017-05-10 16:28:33,039 - [root] INFO: Mutual Inductance (AirGap) = -0.000001
+2017-05-10 16:28:33,039 - [root] INFO: End winding Leakage = 0.000000
+2017-05-10 16:30:31,424 - [root] DEBUG: [SPM] Magnet Positions: [ 0.74804736  0.74804736  0.74804736  0.74804736  0.74804736  0.74804736
+  0.74804736  0.74804736  0.74804736  0.74804736]
+2017-05-10 16:30:31,424 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:30:31,424 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:30:33,710 - [root] INFO: [AA_SPM] Solving time is 2.280373sec
+2017-05-10 16:30:33,710 - [root] INFO: [AA_SPM] Total time is 2.283923sec
+2017-05-10 16:30:33,710 - [root] INFO: [AA_SPM] Magnet Flux = 0.007279
+2017-05-10 16:30:33,710 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-05-10 16:30:33,710 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-05-10 16:30:33,710 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-05-10 16:30:33,710 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-10 16:32:47,430 - [root] DEBUG: [SPM] Magnet Positions: [ 0.74804736  0.74804736  0.74804736  0.74804736  0.74804736  0.74804736
+  0.74804736  0.74804736  0.74804736  0.74804736]
+2017-05-10 16:32:47,430 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:32:47,430 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:32:49,726 - [root] INFO: [AA_SPM] Solving time is 2.293216sec
+2017-05-10 16:32:49,726 - [root] INFO: [AA_SPM] Total time is 2.297315sec
+2017-05-10 16:32:49,726 - [root] INFO: [AA_SPM] Magnet Flux = 0.007279
+2017-05-10 16:32:49,726 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-05-10 16:32:49,726 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-05-10 16:32:49,726 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-05-10 16:32:49,726 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-10 16:35:56,226 - [root] INFO: [AA_SPM] Solving time is 2.523498sec
+2017-05-10 16:35:56,226 - [root] INFO: [AA_SPM] Total time is 2.527224sec
+2017-05-10 16:35:56,236 - [root] INFO: [AA_SPM] Magnet Flux = 0.007279
+2017-05-10 16:35:56,236 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-05-10 16:35:56,236 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-05-10 16:35:56,236 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-05-10 16:35:56,236 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-10 16:35:59,578 - [root] DEBUG: [SPM] Magnet Positions: [ 0.74804736  0.74804736  0.74804736  0.74804736  0.74804736  0.74804736
+  0.74804736  0.74804736  0.74804736  0.74804736]
+2017-05-10 16:35:59,578 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:35:59,579 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-10 16:36:02,206 - [root] INFO: [AA_SPM] Solving time is 2.616876sec
+2017-05-10 16:36:02,206 - [root] INFO: [AA_SPM] Total time is 2.620767sec
+2017-05-10 16:36:02,206 - [root] INFO: [AA_SPM] Magnet Flux = 0.007279
+2017-05-10 16:36:02,206 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-05-10 16:36:02,206 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-05-10 16:36:02,206 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-05-10 16:36:02,206 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-12 14:37:30,319 - [root] DEBUG: [SPM] Magnet Positions: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-05-12 14:37:30,351 - [root] DEBUG: [SPM] Slot Opening Positions: [   5.75984474   53.58670542   77.62452924  105.33901784  142.0227511
+  171.92213103  187.20399265  226.62150544  262.38709531  286.2377896
+  312.55582219  344.78322241]
+2017-05-12 14:37:30,351 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-12 14:37:34,359 - [root] INFO: [AA_SPM] Solving time is 4.010388sec
+2017-05-12 14:37:34,359 - [root] INFO: [AA_SPM] Total time is 4.125614sec
+2017-05-12 14:37:34,359 - [root] INFO: [AA_SPM] Magnet Flux = 0.007358
+2017-05-12 14:37:34,359 - [root] INFO: [AA_SPM] Lmq = 0.000021
+2017-05-12 14:37:34,359 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000018
+2017-05-12 14:37:34,359 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000002
+2017-05-12 14:37:34,359 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-12 14:50:30,802 - [root] DEBUG: [SPM] Magnet Positions: [ 0.6836904   0.81042866  0.72341836  0.76597413  0.70528462  0.76420878
+  0.76796191  0.79761121  0.73549265  0.72479107]
+2017-05-12 14:50:30,802 - [root] DEBUG: [SPM] Slot Opening Positions: [  13.56265035   40.77724133   67.08169658  113.204945    134.00840067
+  175.22957843  184.85224803  231.43645709  246.67639767  287.84312169
+  310.04581333  338.42134688]
+2017-05-12 14:50:30,802 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-12 14:50:34,486 - [root] INFO: [AA_SPM] Solving time is 3.691065sec
+2017-05-12 14:50:34,486 - [root] INFO: [AA_SPM] Total time is 3.716546sec
+2017-05-12 14:50:34,503 - [root] INFO: [AA_SPM] Magnet Flux = 0.007077
+2017-05-12 14:50:34,503 - [root] INFO: [AA_SPM] Lmq = 0.000015
+2017-05-12 14:50:34,503 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000017
+2017-05-12 14:50:34,503 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-05-12 14:50:34,503 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-12 16:36:29,871 - [root] DEBUG: [SPM] Magnet Positions: [ 0.70658307  0.78152069  0.7122445   0.68995828  0.77251253  0.72509059
+  0.78126769  0.7004082   0.75403057  0.74614398]
+2017-05-12 16:36:29,871 - [root] DEBUG: [SPM] Slot Opening Positions: [  18.23122048   40.24253259   64.51167027  114.92032946  131.06464582
+  158.68924475  193.39009653  232.92121346  246.81344389  274.11362027
+  321.81627978  347.35662688]
+2017-05-12 16:36:29,871 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-12 16:36:33,408 - [root] INFO: [AA_SPM] Solving time is 3.525322sec
+2017-05-12 16:36:33,408 - [root] INFO: [AA_SPM] Total time is 3.530783sec
+2017-05-12 16:36:33,408 - [root] INFO: [AA_SPM] Magnet Flux = 0.007245
+2017-05-12 16:36:33,408 - [root] INFO: [AA_SPM] Lmq = 0.000013
+2017-05-12 16:36:33,408 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000022
+2017-05-12 16:36:33,408 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-05-12 16:36:33,408 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-12 16:46:59,219 - [root] DEBUG: [SPM] Magnet Positions: [ 0.71353978  0.78277527  0.70544198  0.6844037   0.77082683  0.72992487
+  0.78480032  0.70077113  0.75141392  0.74939712]
+2017-05-12 16:46:59,219 - [root] DEBUG: [SPM] Slot Opening Positions: [  18.23126801   40.24024231   64.50850502  114.92009157  131.06469439
+  158.68931237  193.3900995   232.92123031  246.81457094  274.11699954
+  321.81960849  347.35718928]
+2017-05-12 16:46:59,219 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-12 16:47:02,782 - [root] INFO: [AA_SPM] Solving time is 3.574204sec
+2017-05-12 16:47:02,782 - [root] INFO: [AA_SPM] Total time is 3.577992sec
+2017-05-12 16:47:02,798 - [root] INFO: [AA_SPM] Magnet Flux = 0.007243
+2017-05-12 16:47:02,798 - [root] INFO: [AA_SPM] Lmq = 0.000013
+2017-05-12 16:47:02,798 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000022
+2017-05-12 16:47:02,798 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-05-12 16:47:02,798 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-12 16:51:58,917 - [root] DEBUG: [SPM] Magnet Positions: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-05-12 16:51:58,917 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-12 16:51:58,917 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-12 16:52:02,602 - [root] INFO: [AA_SPM] Solving time is 3.693966sec
+2017-05-12 16:52:02,602 - [root] INFO: [AA_SPM] Total time is 3.697191sec
+2017-05-12 16:52:02,618 - [root] INFO: [AA_SPM] Magnet Flux = 0.007470
+2017-05-12 16:52:02,618 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-05-12 16:52:02,618 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-05-12 16:52:02,618 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-05-12 16:52:02,618 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-05-15 08:50:15,858 - [root] DEBUG: [SPM] Magnet Positions: [ 0.72512332  0.80522888  0.78190865  0.7173041   0.75286619  0.71588806
+  0.78480142  0.72131731  0.77816572  0.69905966]
+2017-05-15 08:50:15,875 - [root] DEBUG: [SPM] Slot Opening Positions: [  13.36412567   38.78410936   67.29228087  105.78143475  139.69911773
+  166.24533493  195.71431901  235.51322293  253.26865785  288.05741002
+  324.30730286  342.88813228]
+2017-05-15 08:50:15,875 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-05-15 08:50:18,887 - [root] INFO: [AA_SPM] Solving time is 3.005041sec
+2017-05-15 08:50:18,887 - [root] INFO: [AA_SPM] Total time is 3.018522sec
+2017-05-15 08:50:18,887 - [root] INFO: [AA_SPM] Magnet Flux = 0.007218
+2017-05-15 08:50:18,887 - [root] INFO: [AA_SPM] Lmq = 0.000021
+2017-05-15 08:50:18,887 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000026
+2017-05-15 08:50:18,887 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000002
+2017-05-15 08:50:18,887 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 11:47:12,285 - [root] INFO: [AA_SPM] Solving time is 2.266153sec
+2017-08-15 11:47:12,285 - [root] INFO: [AA_SPM] Total time is 2.269108sec
+2017-08-15 11:47:12,285 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 11:47:12,285 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 11:47:12,285 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 11:47:12,285 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 11:47:12,285 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 11:47:14,989 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 11:47:14,989 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 11:47:14,989 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 11:47:14,989 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 11:47:17,316 - [root] INFO: [AA_SPM] Solving time is 2.317569sec
+2017-08-15 11:47:17,316 - [root] INFO: [AA_SPM] Total time is 2.322043sec
+2017-08-15 11:47:17,316 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 11:47:17,316 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 11:47:17,316 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 11:47:17,316 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 11:47:17,316 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 12:10:26,694 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 12:10:26,694 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 12:10:26,694 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 12:10:26,694 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 12:10:29,023 - [root] INFO: [AA_SPM] Solving time is 2.338154sec
+2017-08-15 12:10:29,023 - [root] INFO: [AA_SPM] Total time is 2.342363sec
+2017-08-15 12:10:29,039 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 12:10:29,039 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 12:10:29,039 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 12:10:29,039 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 12:10:29,039 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 13:20:23,545 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 13:20:23,575 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 13:20:23,575 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 13:20:23,575 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 13:20:25,999 - [root] INFO: [AA_SPM] Solving time is 2.431786sec
+2017-08-15 13:20:25,999 - [root] INFO: [AA_SPM] Total time is 3.287729sec
+2017-08-15 13:20:25,999 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 13:20:25,999 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 13:20:26,015 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 13:20:26,015 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 13:20:26,015 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 13:26:23,325 - [root] DEBUG: [SPM] Magnet Widths: [ 0.72502521  0.72502521  0.72502521  0.72502521  0.72502521  0.72502521
+  0.72502521  0.72502521]
+2017-08-15 13:26:23,325 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 13:26:23,325 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 13:26:23,325 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 13:26:24,706 - [root] INFO: [AA_SPM] Solving time is 1.387334sec
+2017-08-15 13:26:24,706 - [root] INFO: [AA_SPM] Total time is 1.409862sec
+2017-08-15 13:26:24,721 - [root] INFO: [AA_SPM] Magnet Flux = 0.007216
+2017-08-15 13:26:24,721 - [root] INFO: [AA_SPM] Lmq = 0.000014
+2017-08-15 13:26:24,721 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000009
+2017-08-15 13:26:24,721 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000005
+2017-08-15 13:26:24,721 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 13:28:33,367 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 13:28:33,367 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 13:28:33,367 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 13:28:33,367 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 13:28:35,729 - [root] INFO: [AA_SPM] Solving time is 2.354202sec
+2017-08-15 13:28:35,729 - [root] INFO: [AA_SPM] Total time is 2.375836sec
+2017-08-15 13:28:35,729 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 13:28:35,729 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 13:28:35,729 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 13:28:35,729 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 13:28:35,729 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 13:44:14,812 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 13:44:14,812 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 13:44:14,812 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 13:44:14,812 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 13:44:16,862 - [root] INFO: [AA_SPM] Solving time is 2.060899sec
+2017-08-15 13:44:16,862 - [root] INFO: [AA_SPM] Total time is 2.107284sec
+2017-08-15 13:44:16,878 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 13:44:16,878 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 13:44:16,878 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 13:44:16,878 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 13:44:16,878 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 14:00:32,542 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 14:00:32,542 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 14:00:32,542 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 14:00:32,542 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 14:00:35,266 - [root] INFO: [AA_SPM] Solving time is 2.719423sec
+2017-08-15 14:00:35,266 - [root] INFO: [AA_SPM] Total time is 2.730577sec
+2017-08-15 14:00:35,266 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 14:00:35,266 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 14:00:35,266 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 14:00:35,266 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 14:00:35,266 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 14:06:31,177 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 14:06:31,177 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 14:06:31,177 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 14:06:31,177 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 14:06:33,805 - [root] INFO: [AA_SPM] Solving time is 2.631589sec
+2017-08-15 14:06:33,805 - [root] INFO: [AA_SPM] Total time is 2.659105sec
+2017-08-15 14:06:33,805 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 14:06:33,805 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 14:06:33,805 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 14:06:33,805 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 14:06:33,805 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 14:47:08,385 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 14:47:08,401 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 14:47:08,401 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 14:47:08,401 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 14:47:11,048 - [root] INFO: [AA_SPM] Solving time is 2.635124sec
+2017-08-15 14:47:11,048 - [root] INFO: [AA_SPM] Total time is 2.668669sec
+2017-08-15 14:47:11,063 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 14:47:11,063 - [root] INFO: [AA_SPM] Lmq = 0.000013
+2017-08-15 14:47:11,063 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 14:47:11,063 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000085
+2017-08-15 14:47:11,063 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:07:15,177 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:07:15,194 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:07:15,194 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:07:15,194 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:07:42,855 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:07:42,855 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:07:42,855 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:07:42,855 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:07:45,369 - [root] INFO: [AA_SPM] Solving time is 2.503572sec
+2017-08-15 15:07:45,369 - [root] INFO: [AA_SPM] Total time is 2.506482sec
+2017-08-15 15:07:45,369 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:07:45,369 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:07:45,369 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:07:45,369 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:07:45,369 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:09:46,342 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:09:46,342 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:09:46,342 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:09:46,342 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:09:48,924 - [root] INFO: [AA_SPM] Solving time is 2.578461sec
+2017-08-15 15:09:48,924 - [root] INFO: [AA_SPM] Total time is 2.581281sec
+2017-08-15 15:09:48,924 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:09:48,924 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:09:48,924 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:09:48,924 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:09:48,924 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:10:18,852 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:10:18,852 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:10:18,852 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:10:18,852 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:10:21,336 - [root] INFO: [AA_SPM] Solving time is 2.482869sec
+2017-08-15 15:10:21,336 - [root] INFO: [AA_SPM] Total time is 2.485665sec
+2017-08-15 15:10:21,336 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:10:21,336 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:10:21,336 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:10:21,336 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:10:21,336 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:11:17,127 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:11:17,127 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:11:17,127 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:11:17,127 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:11:19,392 - [root] INFO: [AA_SPM] Solving time is 2.263367sec
+2017-08-15 15:11:19,392 - [root] INFO: [AA_SPM] Total time is 2.266101sec
+2017-08-15 15:11:19,392 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:11:19,392 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:11:19,392 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:11:19,392 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:11:19,392 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:12:16,851 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:12:16,851 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:12:16,851 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:12:16,851 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:12:19,417 - [root] INFO: [AA_SPM] Solving time is 2.554157sec
+2017-08-15 15:12:19,417 - [root] INFO: [AA_SPM] Total time is 2.556812sec
+2017-08-15 15:12:19,417 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:12:19,417 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:12:19,417 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:12:19,417 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:12:19,417 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:12:54,795 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:12:54,795 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:12:54,795 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:12:54,795 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:12:57,092 - [root] INFO: [AA_SPM] Solving time is 2.278975sec
+2017-08-15 15:12:57,092 - [root] INFO: [AA_SPM] Total time is 2.281642sec
+2017-08-15 15:12:57,092 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:12:57,092 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:12:57,092 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:12:57,092 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:12:57,092 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:16:04,395 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:16:04,395 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:16:04,395 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:16:04,395 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:16:06,661 - [root] INFO: [AA_SPM] Solving time is 2.266214sec
+2017-08-15 15:16:06,661 - [root] INFO: [AA_SPM] Total time is 2.268854sec
+2017-08-15 15:16:06,661 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:16:06,661 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:16:06,661 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:16:06,661 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:16:06,661 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:22:46,479 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:22:46,479 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:22:46,479 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:22:46,479 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:22:48,964 - [root] INFO: [AA_SPM] Solving time is 2.488550sec
+2017-08-15 15:22:48,964 - [root] INFO: [AA_SPM] Total time is 2.491324sec
+2017-08-15 15:22:48,980 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:22:48,980 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:22:48,980 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:22:48,980 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:22:48,980 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:25:57,528 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 15:25:57,528 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 15:25:57,528 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:25:57,528 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 15:26:00,230 - [root] INFO: [AA_SPM] Solving time is 2.709111sec
+2017-08-15 15:26:00,230 - [root] INFO: [AA_SPM] Total time is 2.712089sec
+2017-08-15 15:26:00,230 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 15:26:00,230 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 15:26:00,230 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 15:26:00,230 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 15:26:00,230 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:26:40,259 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:26:40,259 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:26:40,259 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:26:40,259 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:26:42,619 - [root] INFO: [AA_SPM] Solving time is 2.366856sec
+2017-08-15 15:26:42,619 - [root] INFO: [AA_SPM] Total time is 2.412128sec
+2017-08-15 15:26:42,619 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 15:26:42,619 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 15:26:42,619 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 15:26:42,619 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 15:26:42,619 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:31:54,901 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:31:54,901 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:31:54,901 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:31:54,901 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:34:31,173 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:34:31,173 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:34:31,173 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:34:31,173 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:34:33,470 - [root] INFO: [AA_SPM] Solving time is 2.302699sec
+2017-08-15 15:34:33,470 - [root] INFO: [AA_SPM] Total time is 2.308039sec
+2017-08-15 15:34:33,470 - [root] INFO: [AA_SPM] Magnet Flux = 0.766832
+2017-08-15 15:34:33,470 - [root] INFO: [AA_SPM] Lmq = 0.003537
+2017-08-15 15:34:33,470 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 15:34:33,470 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 15:34:33,470 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:40:33,025 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:40:33,025 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:40:33,025 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:40:33,025 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:42:06,180 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:42:06,180 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:42:06,196 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:42:06,196 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:44:57,717 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:44:57,717 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:44:57,717 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:44:57,717 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:44:59,686 - [root] INFO: [AA_SPM] Solving time is 1.966127sec
+2017-08-15 15:44:59,686 - [root] INFO: [AA_SPM] Total time is 1.969744sec
+2017-08-15 15:44:59,686 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 15:44:59,686 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 15:44:59,686 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 15:44:59,686 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 15:44:59,686 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:45:45,835 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:45:45,835 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:45:45,835 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:45:45,835 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:45:47,760 - [root] INFO: [AA_SPM] Solving time is 1.920568sec
+2017-08-15 15:45:47,760 - [root] INFO: [AA_SPM] Total time is 1.923913sec
+2017-08-15 15:45:47,760 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 15:45:47,760 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 15:45:47,760 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 15:45:47,760 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 15:45:47,760 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:56:55,539 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:56:55,569 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:56:55,585 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:56:55,585 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:56:57,891 - [root] INFO: [AA_SPM] Solving time is 2.316275sec
+2017-08-15 15:56:57,891 - [root] INFO: [AA_SPM] Total time is 2.927361sec
+2017-08-15 15:56:57,905 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 15:56:57,905 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 15:56:57,905 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 15:56:57,905 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 15:56:57,905 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:58:25,279 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:58:25,279 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:58:25,279 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:58:25,279 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:58:27,296 - [root] INFO: [AA_SPM] Solving time is 2.015145sec
+2017-08-15 15:58:27,296 - [root] INFO: [AA_SPM] Total time is 2.018920sec
+2017-08-15 15:58:27,296 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 15:58:27,296 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 15:58:27,296 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 15:58:27,296 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 15:58:27,296 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:59:17,500 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:59:17,500 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:59:17,500 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:59:17,500 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:59:19,418 - [root] INFO: [AA_SPM] Solving time is 1.919415sec
+2017-08-15 15:59:19,418 - [root] INFO: [AA_SPM] Total time is 1.923359sec
+2017-08-15 15:59:19,418 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 15:59:19,418 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 15:59:19,418 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 15:59:19,418 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 15:59:19,418 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 15:59:56,627 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 15:59:56,627 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 15:59:56,627 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:59:56,627 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 15:59:58,582 - [root] INFO: [AA_SPM] Solving time is 1.960938sec
+2017-08-15 15:59:58,582 - [root] INFO: [AA_SPM] Total time is 1.964534sec
+2017-08-15 15:59:58,598 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 15:59:58,598 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 15:59:58,598 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 15:59:58,598 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 15:59:58,598 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:00:33,796 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 16:00:33,796 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 16:00:33,796 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:00:33,796 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:00:36,003 - [root] INFO: [AA_SPM] Solving time is 2.203311sec
+2017-08-15 16:00:36,003 - [root] INFO: [AA_SPM] Total time is 2.206650sec
+2017-08-15 16:00:36,003 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 16:00:36,003 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 16:00:36,003 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 16:00:36,003 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 16:00:36,003 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:01:58,176 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 16:01:58,176 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 16:01:58,176 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:01:58,176 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:01:59,957 - [root] INFO: [AA_SPM] Solving time is 1.794533sec
+2017-08-15 16:01:59,957 - [root] INFO: [AA_SPM] Total time is 1.797707sec
+2017-08-15 16:01:59,989 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 16:01:59,989 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 16:01:59,989 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 16:01:59,989 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 16:01:59,989 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:27:34,973 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 16:27:35,036 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 16:27:35,036 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:27:35,036 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:27:37,151 - [root] INFO: [AA_SPM] Solving time is 2.111158sec
+2017-08-15 16:27:37,151 - [root] INFO: [AA_SPM] Total time is 2.177252sec
+2017-08-15 16:27:37,151 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 16:27:37,151 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 16:27:37,151 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 16:27:37,151 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 16:27:37,151 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:44:52,786 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 16:44:52,786 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 16:44:52,786 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:44:52,802 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:44:54,678 - [root] INFO: [AA_SPM] Solving time is 1.889822sec
+2017-08-15 16:44:54,678 - [root] INFO: [AA_SPM] Total time is 1.893568sec
+2017-08-15 16:44:54,694 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-15 16:44:54,694 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-15 16:44:54,694 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 16:44:54,694 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 16:44:54,694 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:46:32,709 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 16:46:32,709 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 16:46:32,709 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 16:46:32,709 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 16:46:34,694 - [root] INFO: [AA_SPM] Solving time is 1.988684sec
+2017-08-15 16:46:34,694 - [root] INFO: [AA_SPM] Total time is 1.992422sec
+2017-08-15 16:46:34,694 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 16:46:34,694 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 16:46:34,694 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 16:46:34,694 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 16:46:34,694 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:48:29,315 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 16:48:29,315 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 16:48:29,315 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 16:48:29,315 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 16:48:31,601 - [root] INFO: [AA_SPM] Solving time is 2.275787sec
+2017-08-15 16:48:31,601 - [root] INFO: [AA_SPM] Total time is 2.279702sec
+2017-08-15 16:48:31,601 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 16:48:31,601 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 16:48:31,601 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 16:48:31,601 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 16:48:31,601 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:50:31,128 - [root] DEBUG: [SPM] Magnet Widths: [ 0.78779552  0.78779552  0.78779552  0.78779552  0.78779552  0.78779552
+  0.78779552  0.78779552  0.78779552  0.78779552]
+2017-08-15 16:50:31,128 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 16:50:31,128 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 16:50:31,144 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 16:50:33,451 - [root] INFO: [AA_SPM] Solving time is 2.310560sec
+2017-08-15 16:50:33,451 - [root] INFO: [AA_SPM] Total time is 2.314157sec
+2017-08-15 16:50:33,451 - [root] INFO: [AA_SPM] Magnet Flux = 0.007469
+2017-08-15 16:50:33,451 - [root] INFO: [AA_SPM] Lmq = 0.000030
+2017-08-15 16:50:33,451 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000029
+2017-08-15 16:50:33,451 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000001
+2017-08-15 16:50:33,451 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:51:57,065 - [root] DEBUG: [SPM] Magnet Widths: [ 0.72502521  0.72502521  0.72502521  0.72502521  0.72502521  0.72502521
+  0.72502521  0.72502521]
+2017-08-15 16:51:57,065 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-15 16:51:57,065 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 16:51:57,065 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-15 16:51:58,578 - [root] INFO: [AA_SPM] Solving time is 1.519791sec
+2017-08-15 16:51:58,578 - [root] INFO: [AA_SPM] Total time is 1.529345sec
+2017-08-15 16:51:58,578 - [root] INFO: [AA_SPM] Magnet Flux = 0.007216
+2017-08-15 16:51:58,578 - [root] INFO: [AA_SPM] Lmq = 0.000014
+2017-08-15 16:51:58,578 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000009
+2017-08-15 16:51:58,578 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000005
+2017-08-15 16:51:58,578 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:54:34,664 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 16:54:34,664 - [root] DEBUG: [SPM] Magnet Shift: [ 4.44  0.   -4.44  4.44  0.   -4.44]
+2017-08-15 16:54:34,664 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:54:34,664 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:54:36,710 - [root] INFO: [AA_SPM] Solving time is 2.036707sec
+2017-08-15 16:54:36,710 - [root] INFO: [AA_SPM] Total time is 2.047693sec
+2017-08-15 16:54:36,710 - [root] INFO: [AA_SPM] Magnet Flux = 0.757086
+2017-08-15 16:54:36,710 - [root] INFO: [AA_SPM] Lmq = 0.003541
+2017-08-15 16:54:36,710 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-15 16:54:36,710 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-15 16:54:36,710 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:55:36,002 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-15 16:55:36,002 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 16:55:36,002 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.55   19.65   32.75   45.85   58.95   72.05   85.15   98.24  111.37
+  124.53  137.62  150.72  163.81  176.9   190.    203.09  216.18  235.54
+  248.65  261.74  274.85  287.95  301.05  314.15  327.25  340.35  353.45]
+2017-08-15 16:55:36,002 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-15 16:55:38,082 - [root] INFO: [AA_SPM] Solving time is 2.080502sec
+2017-08-15 16:55:38,082 - [root] INFO: [AA_SPM] Total time is 2.093960sec
+2017-08-15 16:55:38,082 - [root] INFO: [AA_SPM] Magnet Flux = 0.770340
+2017-08-15 16:55:38,082 - [root] INFO: [AA_SPM] Lmq = 0.003386
+2017-08-15 16:55:38,082 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002383
+2017-08-15 16:55:38,082 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001086
+2017-08-15 16:55:38,082 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:57:20,992 - [root] DEBUG: [SPM] Magnet Widths: [ 0.76011763  0.76011763  0.76011763  0.76011763  0.76011763  0.76011763]
+2017-08-15 16:57:20,992 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 16:57:20,992 - [root] DEBUG: [SPM] Slot Opening Positions: [   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  235.
+  245.  255.  265.  275.  285.  295.  305.  315.  325.  335.  345.  355.]
+2017-08-15 16:57:20,992 - [root] DEBUG: [SPM] Slot Positions: [   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  235.
+  245.  255.  265.  275.  285.  295.  305.  315.  325.  335.  345.  355.]
+2017-08-15 16:57:23,769 - [root] INFO: [AA_SPM] Solving time is 2.775312sec
+2017-08-15 16:57:23,769 - [root] INFO: [AA_SPM] Total time is 2.790315sec
+2017-08-15 16:57:23,769 - [root] INFO: [AA_SPM] Magnet Flux = 1.017574
+2017-08-15 16:57:23,769 - [root] INFO: [AA_SPM] Lmq = 0.006296
+2017-08-15 16:57:23,769 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.004590
+2017-08-15 16:57:23,769 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001811
+2017-08-15 16:57:23,769 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 16:58:55,878 - [root] DEBUG: [SPM] Magnet Widths: [ 0.94815801  0.78080144  0.94815801  0.94815801  0.94815801  0.94815801]
+2017-08-15 16:58:55,878 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 16:58:55,878 - [root] DEBUG: [SPM] Slot Opening Positions: [   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  235.
+  245.  255.  265.  275.  285.  295.  305.  315.  325.  335.  345.  355.]
+2017-08-15 16:58:55,878 - [root] DEBUG: [SPM] Slot Positions: [   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  235.
+  245.  255.  265.  275.  285.  295.  305.  315.  325.  335.  345.  355.]
+2017-08-15 16:58:58,551 - [root] INFO: [AA_SPM] Solving time is 2.676427sec
+2017-08-15 16:58:58,551 - [root] INFO: [AA_SPM] Total time is 2.696931sec
+2017-08-15 16:58:58,551 - [root] INFO: [AA_SPM] Magnet Flux = 1.076895
+2017-08-15 16:58:58,551 - [root] INFO: [AA_SPM] Lmq = 0.006480
+2017-08-15 16:58:58,551 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.004590
+2017-08-15 16:58:58,551 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001811
+2017-08-15 16:58:58,551 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-15 17:00:16,549 - [root] DEBUG: [SPM] Magnet Widths: [ 0.76011763  0.76011763  0.76011763  0.76011763  0.76011763  0.76011763]
+2017-08-15 17:00:16,549 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-15 17:00:16,549 - [root] DEBUG: [SPM] Slot Opening Positions: [   2.5   12.5   22.5   32.5   42.5   52.5   67.5   77.5   87.5   97.5
+  107.5  117.5  122.5  132.5  142.5  152.5  162.5  172.5  187.5  197.5
+  207.5  217.5  227.5  237.5  242.5  252.5  262.5  272.5  282.5  292.5
+  307.5  317.5  327.5  337.5  347.5  357.5]
+2017-08-15 17:00:16,549 - [root] DEBUG: [SPM] Slot Positions: [   5.   15.   25.   35.   45.   55.   65.   75.   85.   95.  105.  115.
+  125.  135.  145.  155.  165.  175.  185.  195.  205.  215.  225.  235.
+  245.  255.  265.  275.  285.  295.  305.  315.  325.  335.  345.  355.]
+2017-08-15 17:00:19,157 - [root] INFO: [AA_SPM] Solving time is 2.611580sec
+2017-08-15 17:00:19,157 - [root] INFO: [AA_SPM] Total time is 2.623911sec
+2017-08-15 17:00:19,157 - [root] INFO: [AA_SPM] Magnet Flux = 1.015810
+2017-08-15 17:00:19,157 - [root] INFO: [AA_SPM] Lmq = 0.006006
+2017-08-15 17:00:19,157 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.004300
+2017-08-15 17:00:19,157 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001816
+2017-08-15 17:00:19,157 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-18 09:22:53,010 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-18 09:22:53,010 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-18 09:22:53,010 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-18 09:22:53,010 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-18 09:22:54,359 - [root] INFO: [AA_SPM] Solving time is 1.347384sec
+2017-08-18 09:22:54,359 - [root] INFO: [AA_SPM] Total time is 1.363855sec
+2017-08-18 09:22:54,359 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-18 09:22:54,359 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-18 09:22:54,375 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-18 09:22:54,375 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-18 09:22:54,375 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-18 17:33:33,342 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-18 17:33:33,344 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-18 17:33:33,344 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-18 17:33:33,344 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-18 17:33:34,540 - [root] INFO: [AA_SPM] Solving time is 1.196740sec
+2017-08-18 17:33:34,540 - [root] INFO: [AA_SPM] Total time is 1.218105sec
+2017-08-18 17:33:34,546 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-18 17:33:34,546 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-18 17:33:34,546 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-18 17:33:34,546 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-18 17:33:34,546 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-18 17:36:59,311 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-18 17:36:59,312 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-18 17:36:59,312 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-18 17:36:59,312 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-18 17:37:00,615 - [root] INFO: [AA_SPM] Solving time is 1.302680sec
+2017-08-18 17:37:00,615 - [root] INFO: [AA_SPM] Total time is 1.306283sec
+2017-08-18 17:37:00,618 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-18 17:37:00,618 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-18 17:37:00,618 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-18 17:37:00,618 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-18 17:37:00,618 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-21 15:26:07,578 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-21 15:26:07,586 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-21 15:26:07,588 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:26:07,588 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:26:08,918 - [root] INFO: [AA_SPM] Solving time is 1.331009sec
+2017-08-21 15:26:08,918 - [root] INFO: [AA_SPM] Total time is 1.349076sec
+2017-08-21 15:26:08,921 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-21 15:26:08,921 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-21 15:26:08,921 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-21 15:26:08,923 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-21 15:26:08,923 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-21 15:31:57,930 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-21 15:31:57,930 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-21 15:31:57,930 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:31:57,930 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:31:58,911 - [root] INFO: [AA_SPM] Solving time is 0.980030sec
+2017-08-21 15:31:58,911 - [root] INFO: [AA_SPM] Total time is 0.983635sec
+2017-08-21 15:31:58,914 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-21 15:31:58,914 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-21 15:31:58,914 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-21 15:31:58,914 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-21 15:31:58,914 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-21 15:34:51,848 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-21 15:34:51,848 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-21 15:34:51,849 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:34:51,849 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:34:52,930 - [root] INFO: [AA_SPM] Solving time is 1.079967sec
+2017-08-21 15:34:52,930 - [root] INFO: [AA_SPM] Total time is 1.083422sec
+2017-08-21 15:34:52,934 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-21 15:34:52,934 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-21 15:34:52,934 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-21 15:34:52,934 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-21 15:34:52,934 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-21 15:35:43,046 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-21 15:35:43,046 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-21 15:35:43,046 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:35:43,046 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:35:44,292 - [root] INFO: [AA_SPM] Solving time is 1.244056sec
+2017-08-21 15:35:44,292 - [root] INFO: [AA_SPM] Total time is 1.247931sec
+2017-08-21 15:35:44,295 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-21 15:35:44,295 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-21 15:35:44,295 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-21 15:35:44,295 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-21 15:35:44,295 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-21 15:36:26,269 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-21 15:36:26,269 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-21 15:36:26,269 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:36:26,270 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:36:27,609 - [root] INFO: [AA_SPM] Solving time is 1.339064sec
+2017-08-21 15:36:27,609 - [root] INFO: [AA_SPM] Total time is 1.342923sec
+2017-08-21 15:36:27,612 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-21 15:36:27,612 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-21 15:36:27,612 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-21 15:36:27,612 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-21 15:36:27,612 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-21 15:36:58,388 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-21 15:36:58,388 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-21 15:36:58,388 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:36:58,390 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:36:59,525 - [root] INFO: [AA_SPM] Solving time is 1.135232sec
+2017-08-21 15:36:59,525 - [root] INFO: [AA_SPM] Total time is 1.138571sec
+2017-08-21 15:36:59,530 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-21 15:36:59,530 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-21 15:36:59,530 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-21 15:36:59,530 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-21 15:36:59,530 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-21 15:39:35,036 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-21 15:39:35,036 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-21 15:39:35,036 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:39:35,038 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 15:39:36,151 - [root] INFO: [AA_SPM] Solving time is 1.114365sec
+2017-08-21 15:39:36,151 - [root] INFO: [AA_SPM] Total time is 1.117941sec
+2017-08-21 15:39:36,155 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-21 15:39:36,155 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-21 15:39:36,155 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-21 15:39:36,155 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-21 15:39:36,155 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-21 17:23:14,293 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-21 17:23:14,293 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-21 17:23:14,295 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 17:23:14,295 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-21 17:23:15,582 - [root] INFO: [AA_SPM] Solving time is 1.287122sec
+2017-08-21 17:23:15,582 - [root] INFO: [AA_SPM] Total time is 1.290899sec
+2017-08-21 17:23:15,585 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-21 17:23:15,585 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-21 17:23:15,585 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-21 17:23:15,585 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-21 17:23:15,585 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-23 09:20:58,668 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-23 09:20:58,668 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-23 09:20:58,670 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-23 09:20:58,670 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-23 09:20:59,953 - [root] INFO: [AA_SPM] Solving time is 1.283979sec
+2017-08-23 09:20:59,953 - [root] INFO: [AA_SPM] Total time is 1.287547sec
+2017-08-23 09:20:59,957 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-23 09:20:59,957 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-23 09:20:59,957 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-23 09:20:59,957 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-23 09:20:59,957 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-23 09:23:23,795 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-08-23 09:23:23,796 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-23 09:23:23,796 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-23 09:23:23,796 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-08-23 09:23:25,006 - [root] INFO: [AA_SPM] Solving time is 1.210020sec
+2017-08-23 09:23:25,006 - [root] INFO: [AA_SPM] Total time is 1.213814sec
+2017-08-23 09:23:25,009 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-08-23 09:23:25,009 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-08-23 09:23:25,009 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-08-23 09:23:25,009 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-08-23 09:23:25,010 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-31 10:50:12,882 - [root] DEBUG: [SPM] Magnet Widths: [ 0.71410511  0.71410511  0.71410511  0.71410511  0.71410511  0.71410511
+  0.71410511  0.71410511]
+2017-08-31 10:50:13,036 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-08-31 10:50:13,038 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-31 10:50:13,038 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-08-31 10:50:14,631 - [root] INFO: [AA_SPM] Solving time is 1.593389sec
+2017-08-31 10:50:14,631 - [root] INFO: [AA_SPM] Total time is 1.752071sec
+2017-08-31 10:50:14,634 - [root] INFO: [AA_SPM] Magnet Flux = 0.021944
+2017-08-31 10:50:14,634 - [root] INFO: [AA_SPM] Lmq = 0.000066
+2017-08-31 10:50:14,634 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000044
+2017-08-31 10:50:14,634 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000022
+2017-08-31 10:50:14,634 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-31 11:24:42,976 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-31 11:24:42,976 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-31 11:24:42,976 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-31 11:24:42,977 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-31 11:24:45,180 - [root] INFO: [AA_SPM] Solving time is 2.203235sec
+2017-08-31 11:24:45,180 - [root] INFO: [AA_SPM] Total time is 2.404012sec
+2017-08-31 11:24:45,184 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-31 11:24:45,184 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-31 11:24:45,184 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-31 11:24:45,184 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-31 11:24:45,184 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-08-31 11:49:58,394 - [root] DEBUG: [SPM] Magnet Widths: [ 0.80974219  0.80974219  0.80974219  0.80974219  0.80974219  0.80974219]
+2017-08-31 11:49:58,404 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-08-31 11:49:58,405 - [root] DEBUG: [SPM] Slot Opening Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-31 11:49:58,405 - [root] DEBUG: [SPM] Slot Positions: [   6.667   20.      33.333   46.667   60.      73.333   86.667  100.
+  113.333  126.667  140.     153.333  166.667  180.     193.333  206.667
+  220.     233.333  246.667  260.     273.333  286.667  300.     313.333
+  326.667  340.     353.333]
+2017-08-31 11:50:00,466 - [root] INFO: [AA_SPM] Solving time is 2.059975sec
+2017-08-31 11:50:00,466 - [root] INFO: [AA_SPM] Total time is 2.335095sec
+2017-08-31 11:50:00,470 - [root] INFO: [AA_SPM] Magnet Flux = 0.770552
+2017-08-31 11:50:00,470 - [root] INFO: [AA_SPM] Lmq = 0.003536
+2017-08-31 11:50:00,470 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.002499
+2017-08-31 11:50:00,470 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.001032
+2017-08-31 11:50:00,470 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-09-11 16:01:24,200 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-09-11 16:01:24,209 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-09-11 16:01:24,209 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-09-11 16:01:24,210 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-09-11 16:01:25,173 - [root] INFO: [AA_SPM] Solving time is 0.962617sec
+2017-09-11 16:01:25,173 - [root] INFO: [AA_SPM] Total time is 0.993641sec
+2017-09-11 16:01:25,176 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-09-11 16:01:25,176 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-09-11 16:01:25,176 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-09-11 16:01:25,177 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-09-11 16:01:25,177 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-09-12 10:55:51,690 - [root] DEBUG: [SPM] Magnet Widths: [ 0.67850145  0.67850145  0.67850145  0.67850145  0.67850145  0.67850145]
+2017-09-12 10:55:51,696 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.]
+2017-09-12 10:55:51,696 - [root] DEBUG: [SPM] Slot Opening Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-09-12 10:55:51,697 - [root] DEBUG: [SPM] Slot Positions: [  20.   60.  100.  140.  180.  220.  260.  300.  340.]
+2017-09-12 10:55:52,594 - [root] INFO: [AA_SPM] Solving time is 0.896550sec
+2017-09-12 10:55:52,595 - [root] INFO: [AA_SPM] Total time is 0.911704sec
+2017-09-12 10:55:52,598 - [root] INFO: [AA_SPM] Magnet Flux = 0.008152
+2017-09-12 10:55:52,598 - [root] INFO: [AA_SPM] Lmq = 0.000029
+2017-09-12 10:55:52,598 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000019
+2017-09-12 10:55:52,598 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000010
+2017-09-12 10:55:52,598 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-09-22 14:05:08,665 - [root] DEBUG: [SPM] Magnet Widths: [ 0.72502521  0.72502521  0.72502521  0.72502521  0.72502521  0.72502521
+  0.72502521  0.72502521]
+2017-09-22 14:05:08,680 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-09-22 14:05:08,680 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 14:05:08,680 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 14:05:09,661 - [root] INFO: [AA_SPM] Solving time is 0.981290sec
+2017-09-22 14:05:09,661 - [root] INFO: [AA_SPM] Total time is 0.998732sec
+2017-09-22 14:05:09,665 - [root] INFO: [AA_SPM] Magnet Flux = 0.007216
+2017-09-22 14:05:09,665 - [root] INFO: [AA_SPM] Lmq = 0.000014
+2017-09-22 14:05:09,665 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000009
+2017-09-22 14:05:09,665 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000005
+2017-09-22 14:05:09,665 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-09-22 15:31:56,980 - [root] DEBUG: [SPM] Magnet Widths: [ 0.72502521  0.72502521  0.72502521  0.72502521  0.72502521  0.72502521
+  0.72502521  0.72502521]
+2017-09-22 15:31:56,980 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-09-22 15:31:56,980 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 15:31:56,980 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 15:31:58,019 - [root] INFO: [AA_SPM] Solving time is 1.038541sec
+2017-09-22 15:31:58,019 - [root] INFO: [AA_SPM] Total time is 1.043413sec
+2017-09-22 15:31:58,026 - [root] INFO: [AA_SPM] Magnet Flux = 0.007216
+2017-09-22 15:31:58,026 - [root] INFO: [AA_SPM] Lmq = 0.000014
+2017-09-22 15:31:58,026 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000009
+2017-09-22 15:31:58,026 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000005
+2017-09-22 15:31:58,026 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-09-22 15:37:12,091 - [root] DEBUG: [SPM] Magnet Widths: [ 0.72502521  0.72502521  0.72502521  0.72502521  0.72502521  0.72502521
+  0.72502521  0.72502521]
+2017-09-22 15:37:12,092 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-09-22 15:37:12,092 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 15:37:12,092 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 15:37:13,217 - [root] INFO: [AA_SPM] Solving time is 1.123991sec
+2017-09-22 15:37:13,217 - [root] INFO: [AA_SPM] Total time is 1.128889sec
+2017-09-22 15:37:13,220 - [root] INFO: [AA_SPM] Magnet Flux = 0.007216
+2017-09-22 15:37:13,220 - [root] INFO: [AA_SPM] Lmq = 0.000014
+2017-09-22 15:37:13,220 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000009
+2017-09-22 15:37:13,220 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000005
+2017-09-22 15:37:13,220 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-09-22 15:41:42,378 - [root] DEBUG: [SPM] Magnet Widths: [ 0.72502521  0.72502521  0.72502521  0.72502521  0.72502521  0.72502521
+  0.72502521  0.72502521]
+2017-09-22 15:41:42,378 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-09-22 15:41:42,378 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 15:41:42,380 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 15:41:43,348 - [root] INFO: [AA_SPM] Solving time is 0.967914sec
+2017-09-22 15:41:43,348 - [root] INFO: [AA_SPM] Total time is 0.971330sec
+2017-09-22 15:41:43,351 - [root] INFO: [AA_SPM] Magnet Flux = 0.007216
+2017-09-22 15:41:43,351 - [root] INFO: [AA_SPM] Lmq = 0.000014
+2017-09-22 15:41:43,351 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000009
+2017-09-22 15:41:43,351 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000005
+2017-09-22 15:41:43,351 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-09-22 16:18:25,045 - [root] DEBUG: [SPM] Magnet Widths: [ 0.72502521  0.72502521  0.72502521  0.72502521  0.72502521  0.72502521
+  0.72502521  0.72502521]
+2017-09-22 16:18:25,046 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-09-22 16:18:25,046 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 16:18:25,046 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 16:18:25,973 - [root] INFO: [AA_SPM] Solving time is 0.927255sec
+2017-09-22 16:18:25,973 - [root] INFO: [AA_SPM] Total time is 0.930814sec
+2017-09-22 16:18:25,977 - [root] INFO: [AA_SPM] Magnet Flux = 0.007216
+2017-09-22 16:18:25,977 - [root] INFO: [AA_SPM] Lmq = 0.000014
+2017-09-22 16:18:25,977 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000009
+2017-09-22 16:18:25,977 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000005
+2017-09-22 16:18:25,977 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
+2017-09-22 17:39:05,240 - [root] DEBUG: [SPM] Magnet Widths: [ 0.72502521  0.72502521  0.72502521  0.72502521  0.72502521  0.72502521
+  0.72502521  0.72502521]
+2017-09-22 17:39:05,240 - [root] DEBUG: [SPM] Magnet Shift: [ 0.  0.  0.  0.  0.  0.  0.  0.]
+2017-09-22 17:39:05,240 - [root] DEBUG: [SPM] Slot Opening Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 17:39:05,240 - [root] DEBUG: [SPM] Slot Positions: [  15.   45.   75.  105.  135.  165.  195.  225.  255.  285.  315.  345.]
+2017-09-22 17:39:06,141 - [root] INFO: [AA_SPM] Solving time is 0.900547sec
+2017-09-22 17:39:06,141 - [root] INFO: [AA_SPM] Total time is 0.904149sec
+2017-09-22 17:39:06,148 - [root] INFO: [AA_SPM] Magnet Flux = 0.007216
+2017-09-22 17:39:06,148 - [root] INFO: [AA_SPM] Lmq = 0.000014
+2017-09-22 17:39:06,148 - [root] INFO: [AA_SPM] Self Inductance (AirGap) = 0.000009
+2017-09-22 17:39:06,148 - [root] INFO: [AA_SPM] Mutual Inductance (AirGap) = -0.000005
+2017-09-22 17:39:06,148 - [root] INFO: [AA_SPM] End winding Leakage = 0.000000
