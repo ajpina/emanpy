@@ -19,4 +19,4 @@
 
 __author__ = 'ajpina'
 
-from .spm_ir_rf_subdomain import SPM_InnerRotor_RadialFlux_SubDomain
+from .spm_ir_rf_subdomain import SPMInnerRotorRadialFluxSubDomain

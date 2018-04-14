@@ -17,75 +17,35 @@
 # limitations under the License.
 # ==========================================================================
 
-import abc
 
 
 class Analysis(object):
-    __metaclass__ = abc.ABCMeta
 
-    def __init__(self, analysis_settings):
-        self._solver = analysis_settings['solver']
-
-    def set_machine(self, RotatingMachine):
-        self._rotating_machine = RotatingMachine
+    def __init__(self, analysis_settings, rotating_machine):
+        self.solver_str = analysis_settings['solver']
+        if rotating_machine.get_type() == 'SPM':
+            if self.solver_str == 'subdomain':
+                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
+                self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
+            elif self.solver_str == 'reluctance_network':
+                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
+                self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
+            else:
+                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
+                self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
+        else:
+            if self.solver_str == 'subdomain':
+                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
+                self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
+            elif self.solver_str == 'reluctance_network':
+                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
+                self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
+            else:
+                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
+                self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
 
     def solve(self):
-        if self._RotatingMachine._type == 'SPM':
-            if self._solver == 'subdomain':
-                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
-                spm = SPMInnerRotorRadialFluxSubDomain()
-                success = spm.solve()
-                if success:
-                    self._results = spm.get_results()
-                    return True
-                else:
-                    return False
-            elif self._solver == 'reluctance_network':
-                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
-                spm = SPMInnerRotorRadialFluxSubDomain()
-                success = spm.solve()
-                if success:
-                    self._results = spm.get_results()
-                    return True
-                else:
-                    return False
-            else:
-                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
-                spm = SPMInnerRotorRadialFluxSubDomain()
-                success = spm.solve()
-                if success:
-                    self._results = spm.get_results()
-                    return True
-                else:
-                    return False
-        else:
-            if self._solver == 'subdomain':
-                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
-                spm = SPMInnerRotorRadialFluxSubDomain()
-                success = spm.solve()
-                if success:
-                    self._results = spm.get_results()
-                    return True
-                else:
-                    return False
-            elif self._solver == 'reluctance_network':
-                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
-                spm = SPMInnerRotorRadialFluxSubDomain()
-                success = spm.solve()
-                if success:
-                    self._results = spm.get_results()
-                    return True
-                else:
-                    return False
-            else:
-                from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
-                spm = SPMInnerRotorRadialFluxSubDomain()
-                success = spm.solve()
-                if success:
-                    self._results = spm.get_results()
-                    return True
-                else:
-                    return False
+        return self.solver_instance.solve()
 
     def get_results(self):
-        return self._results
+        return self.solver_instance.get_results()

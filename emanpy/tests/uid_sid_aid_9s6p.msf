@@ -167,7 +167,7 @@
       "Rl" : 36.5e-3,
       "magnets" : {
         "type" : "Arc",
-        "magnetization" : "Parallel",
+        "magnetisation" : "Parallel",
         "material" : {
            "BHcurve" : null,
            "resistivity" : 1e-6,

@@ -115,12 +115,11 @@ def main(argv=None):
         logging.basicConfig(filename=logfile, level=logging.CRITICAL,
                             format='%(asctime)s - [%(name)s] %(levelname)s: %(message)s')
 
-    analysis = Analysis(analysis_settings['analysis'])
     machine = RotatingMachine.create(machine_settings['machine'])
-    analysis.set_machine(machine)
+    analysis = Analysis(analysis_settings['analysis'], machine)
     success = analysis.solve()
     if success:
-        results =  analysis.get_results()
+        results = analysis.get_results()
     else:
         print 'Something went wrong'
 

@@ -49,67 +49,134 @@ from emanpy.analysis import Analysis
 
 class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
-    _n_harms = 180
-    _m_harms = 20
-    _l_harms = 20
+    __n_harms = 180
+    __m_harms = 20
+    __l_harms = 20
+    __pp = 3
+    __Ns = 9
+    __oRr = 15.2e-3
+    __Rm = 18.2e-3
+    __Rs = 19.2e-3
+    __Rt = 20e-3
+    __Rsb = 30e-3
+    __Aso = np.ones(9) * 0.1
+    __As = np.ones(9) * 0.3
+    __alpha_so = np.linspace(0, 360, 9, endpoint=False) * DEG2RAD
+    __alpha_s = np.linspace(0, 360, 9, endpoint=False) * DEG2RAD
+    __alpha_p_v = np.zeros(6)
+    __delta_v = np.zeros(6)
+    __M = np.ones(6) * 1.2 / MU0
+    __mur = np.ones(6) * 1.1
+    __magnetisation = 'Parallel'
+    __C = np.zeros((6, 9))
+    __Nph = 3
+    __Ct = 20
+    __Cp = 3
+    __Cs = 1
+    __gcd = 3
+    __lcm = 18
 
-    def __init__(self):
-        self._name = "Surface Permanent Magnet Machine - Inner Rotor - Subdomain"
-        self._stator = self._RotatingMachine.stator
-        self._rotor = rotor
-        self._pp = rotor._pp
-        self._Ns = stator._Ns
-        self._oRr = rotor._oRr
-        self._Rm = rotor._magnets[0]._Ml + rotor._oRr
-        self._Rs = stator._iSr
-        self._Rt = stator._iSr + (stator._slots[0]._h0 + stator._slots[0]._h1)/2.0
-        self._Rsb = self._Rt + stator._slots[0]._h2 + stator._slots[0]._h3
+    def __init__(self, analysis_settings, spm):
+        self.type = "Surface Permanent Magnet Machine - Inner Rotor - Subdomain"
+        self.__pp = spm.rotor.pp
+        self.__Ns = spm.stator.slots_number
+        self.__oRr = spm.rotor.outer_radius
+        self.__Rm = spm.rotor.magnets[0].length + spm.rotor.outer_radius
+        self.__Rs = spm.stator.inner_radius
+        self.__Aso = np.zeros(self.__Ns)
+        self.__As = np.zeros(self.__Ns)
+        self.__alpha_so = np.zeros(self.__Ns)
+        self.__alpha_s = np.zeros(self.__Ns)
+        self.__gcd = GCD(self.__Ns, 2 * self.__pp)
+        self.__lcm = LCM(self.__Ns, 2 * self.__pp)
 
-        self._Aso = np.zeros(self._Ns)
-        self._As = np.zeros(self._Ns)
-        self._alpha_so = np.zeros(self._Ns)
-        self._alpha_s = np.zeros(self._Ns)
-        for i,list in enumerate(stator._slots):
-            self._Aso[i] = (list._w0/stator._iSr)
-            self._As[i] = (((list._w1 + list._w2)/2.0)/((self._Rt + self._Rsb)/2.0))
-            self._alpha_so[i] = list._SOp * DEG2RAD
-            self._alpha_s[i] = list._Sp * DEG2RAD
+        self.set_slot_geometry(spm)
+        self.set_magnet_geometry(spm)
+        self.set_winding_definition(spm)
 
-        self._alpha_p_v = np.zeros(2*self._pp)
-        self._delta_v = np.zeros(2 * self._pp)
-        self._M = np.zeros(2 * self._pp)
-        for i,list in enumerate(rotor._magnets):
-            self._alpha_p_v[i] = list._alpha_p_v
-            self._delta_v[i] = list._delta_v
-            self._M[i] = list._M
-
-        log_msg = "[SPM] Magnet Widths: " + str(self._alpha_p_v)
+        log_msg = "[SPM] Magnet Widths: " + str(self.__alpha_p_v)
         logging.debug(log_msg)
-        log_msg = "[SPM] Magnet Shift: " + str(self._delta_v * RAD2DEG)
+        log_msg = "[SPM] Magnet Shift: " + str(self.__delta_v * RAD2DEG)
         logging.debug(log_msg)
-        log_msg = "[SPM] Slot Opening Positions: " + str(self._alpha_so * RAD2DEG)
+        log_msg = "[SPM] Slot Opening Positions: " + str(self.__alpha_so * RAD2DEG)
         logging.debug(log_msg)
-        log_msg = "[SPM] Slot Positions: " + str(self._alpha_s * RAD2DEG)
+        log_msg = "[SPM] Slot Positions: " + str(self.__alpha_s * RAD2DEG)
         logging.debug(log_msg)
 
-        self._magType = rotor._magnets[0]._magType
-        self._Nph = stator._winding._phases
-        self._Ct = stator._winding._Cturns
-        self._Cp = stator._winding._Cparallel
-        self._Cs = stator._winding._Cseries
-        self._gcd = GCD( self._Ns, 2*self._pp )
-        self._lcm = LCM( self._Ns, 2*self._pp )
+
+
+    def set_slot_geometry(self, spm):
+        slot = spm.stator.slots[0]
+        if slot.get_type() == 'Type0':
+            self.__Rt = spm.stator.inner_radius + (slot.h0 + slot.h1) / 2.0
+            self.__Rsb = self.__Rt + slot.h2 + slot.h3
+            for i, sl in enumerate(spm.stator.slots):
+                self.__Aso[i] = (sl.w0 / spm.stator.inner_radius)
+                self.__As[i] = (((sl.w1 + sl.w2) / 2.0) / ((self.__Rt + self.__Rsb) / 2.0))
+                self.__alpha_so[i] = sl.so_position * DEG2RAD
+                self.__alpha_s[i] = sl.s_position * DEG2RAD
+        else:
+            self.__Rt = spm.stator.inner_radius + (slot.h0 + slot.h1) / 2.0
+            self.__Rsb = self.__Rt + slot.h2 + slot.h3
+            for i, sl in enumerate(spm.stator.slots):
+                self.__Aso[i] = (sl.w0 / spm.stator.inner_radius)
+                self.__As[i] = (((sl.w1 + sl.w2) / 2.0) / ((self.__Rt + self.__Rsb) / 2.0))
+                self.__alpha_so[i] = sl.so_position * DEG2RAD
+                self.__alpha_s[i] = sl.s_position * DEG2RAD
+
+    def set_magnet_geometry(self, spm):
+        magnet = spm.rotor.magnets[0]
+        if magnet.get_type() == 'Arc':
+            self.__alpha_p_v = np.zeros(2 * self.__pp)
+            self.__delta_v = np.zeros(2 * self.__pp)
+            self.__M = np.zeros(2 * self.__pp)
+            for i, mn in enumerate(spm.rotor.magnets):
+                # IT'S MULTIPLIED BY POLE NUMBER
+                self.__alpha_p_v[i] = 2 * self.__pp * mn.mean_arc_angle
+                self.__delta_v[i] = mn.deviation
+                self.__M[i] = mn.material.Br / MU0
+                self.__mur[i] = mn.material.mur
+
+            self.__magnetisation = mn.magnetisation
+        else:
+            self.__alpha_p_v = np.zeros(2 * self._pp)
+            self.__delta_v = np.zeros(2 * self._pp)
+            self.__M = np.zeros(2 * self._pp)
+            for i, mn in enumerate(spm.rotor.magnets):
+                # IT'S MULTIPLIED BY POLE NUMBER
+                self.__alpha_p_v[i] = 2 * self.__pp * mn.mean_arc_angle
+                self.__delta_v[i] = mn.deviation
+                self.__M[i] = mn.material.Br / MU0
+                self.__mur[i] = mn.material.mur
+
+            self.__magnetisation = mn.magnetisation
+
+    def set_winding_definition(self, spm):
+        winding = spm.stator.winding
+        if winding.get_type() == 'Concentrated':
+            self.__Nph = winding.phases
+            self.__Ct = winding.turns_coil
+            self.__Cp = winding.coil_parallel
+            self.__Cs = winding.coil_series
+            self.__C = winding.conn_matrix
+        else:
+            self.__Nph = winding.phases
+            self.__Ct = winding.turns_coil
+            self.__Cp = winding.coil_parallel
+            self.__Cs = winding.coil_series
+            self.__C = winding.conn_matrix
+
 
 
     def __assembly_A(self):
-        Nharms = np.arange(2, self._n_harms+1)
+        Nharms = np.arange(2, self.__n_harms+1)
         N = len(Nharms)
-        Mharms = np.arange(1, self._m_harms)
+        Mharms = np.arange(1, self.__m_harms)
         M = len(Mharms)
-        Lharms = np.arange(1, self._l_harms)
+        Lharms = np.arange(1, self.__l_harms)
         L = len(Lharms)
-        MNs = M*self._Ns
-        LNs = L*self._Ns
+        MNs = M*self.__Ns
+        LNs = L*self.__Ns
 
         In = np.eye(N, dtype=int)
         Imns = np.eye(MNs, dtype=int)
@@ -125,8 +192,8 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         rowVectorL = np.ones((1, L))
         colVectorM = np.ones((M, 1))
 
-        RM = np.diag((self._oRr / self._Rm) ** (Nharms - 1))
-        MG = np.diag((self._Rm / self._Rs) ** (Nharms - 1))
+        RM = np.diag((self.__oRr / self.__Rm) ** (Nharms - 1))
+        MG = np.diag((self.__Rm / self.__Rs) ** (Nharms - 1))
         GS = np.zeros((MNs, MNs))
         F = np.zeros((MNs, MNs))
         SOS = np.zeros((LNs, LNs))
@@ -142,41 +209,41 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             n = Nharms[i] - 1
             NN[i][i] = n
 
-            for iNs in range(0, self._Ns):
-                Fm = Mharms * PI / self._Aso[iNs]
+            for iNs in range(0, self.__Ns):
+                Fm = Mharms * PI / self.__Aso[iNs]
                 aux_term1 = ((Fm**2.0) - n**2.0)**(-1)
-                aux_term2 = ( -1**Mharms )*np.sin( n*self._alpha_so[iNs] + n*self._Aso[iNs] / 2.0)
-                aux_term3 = np.sin(n*self._alpha_so[iNs] - n*self._Aso[iNs] / 2.0) * np.ones(M)
+                aux_term2 = ( -1**Mharms )*np.sin( n*self.__alpha_so[iNs] + n*self.__Aso[iNs] / 2.0)
+                aux_term3 = np.sin(n*self.__alpha_so[iNs] - n*self.__Aso[iNs] / 2.0) * np.ones(M)
                 eta[i,iNs*M:(iNs+1)*M] = (-1.0/PI)*n*aux_term1*(aux_term2 - aux_term3)
 
-                aux_term4 = ( -1**Mharms )*np.cos( n*self._alpha_so[iNs] + n*self._Aso[iNs] / 2.0)
-                aux_term5 = np.cos(n * self._alpha_so[iNs] - n * self._Aso[iNs] / 2.0) * np.ones(M)
+                aux_term4 = ( -1**Mharms )*np.cos( n*self.__alpha_so[iNs] + n*self.__Aso[iNs] / 2.0)
+                aux_term5 = np.cos(n * self.__alpha_so[iNs] - n * self.__Aso[iNs] / 2.0) * np.ones(M)
                 xi[i,iNs*M:(iNs+1)*M] = (1.0 / PI) * n * aux_term1 * (aux_term4 - aux_term5)
 
-                sigma[iNs*M:(iNs+1)*M,i] = (2.0*PI / self._Aso[iNs])*eta[i,iNs*M:(iNs+1)*M]
-                tau[iNs*M:(iNs+1)*M,i] = (2.0*PI / self._Aso[iNs])*xi[i,iNs*M:(iNs+1)*M]
+                sigma[iNs*M:(iNs+1)*M,i] = (2.0*PI / self.__Aso[iNs])*eta[i,iNs*M:(iNs+1)*M]
+                tau[iNs*M:(iNs+1)*M,i] = (2.0*PI / self.__Aso[iNs])*xi[i,iNs*M:(iNs+1)*M]
 
-        for iNs in range(0, self._Ns):
-            Fm = Mharms * PI / self._Aso[iNs]
-            GS[iNs*M:(iNs+1)*M,iNs*M:(iNs+1)*M] = np.diag((self._Rs / self._Rt)**Fm)
+        for iNs in range(0, self.__Ns):
+            Fm = Mharms * PI / self.__Aso[iNs]
+            GS[iNs*M:(iNs+1)*M,iNs*M:(iNs+1)*M] = np.diag((self.__Rs / self.__Rt)**Fm)
             F[iNs*M:(iNs+1)*M,iNs*M:(iNs+1)*M] = np.diag(Fm)
 
-            El = Lharms * PI / self._As[iNs]
-            SOS[iNs*L:(iNs+1)*L,iNs*L:(iNs+1)*L] = np.diag((self._Rt / self._Rsb) ** El)
+            El = Lharms * PI / self.__As[iNs]
+            SOS[iNs*L:(iNs+1)*L,iNs*L:(iNs+1)*L] = np.diag((self.__Rt / self.__Rsb) ** El)
             E[iNs*L:(iNs+1)*L,iNs*L:(iNs+1)*L] = np.diag(El)
 
             aux_term6 = (np.dot(np.transpose([Fm**2]),rowVectorL) - np.dot(colVectorM,[El**2]))**(-1)
-            aux_term7 = np.sin(El*(self._alpha_so[iNs] - self._alpha_s[iNs] +
-                                          (self._As[iNs] - self._Aso[iNs]) / 2.0))
+            aux_term7 = np.sin(El*(self.__alpha_so[iNs] - self.__alpha_s[iNs] +
+                                          (self.__As[iNs] - self.__Aso[iNs]) / 2.0))
             aux_term8 =  np.dot(colVectorM, [aux_term7])
-            aux_term9 = np.sin(El * (self._alpha_so[iNs] - self._alpha_s[iNs] +
-                                     (self._As[iNs] + self._Aso[iNs]) / 2.0))
+            aux_term9 = np.sin(El * (self.__alpha_so[iNs] - self.__alpha_s[iNs] +
+                                     (self.__As[iNs] + self.__Aso[iNs]) / 2.0))
             aux_term10 = np.dot(np.transpose([-1 ** Mharms]), [aux_term9])
 
-            phi[iNs*M:(iNs+1)*M,iNs*L:(iNs+1)*L] = ( (2.0 / self._As[iNs])*
+            phi[iNs*M:(iNs+1)*M,iNs*L:(iNs+1)*L] = ( (2.0 / self.__As[iNs])*
                                                      np.dot(colVectorM, [El]) * aux_term6 *
                                                      (aux_term8 - aux_term10) )
-            V[iNs*M:(iNs+1)*M,iNs*L:(iNs+1)*L] = ( (self._As[iNs] / self._Aso[iNs]) *
+            V[iNs*M:(iNs+1)*M,iNs*L:(iNs+1)*L] = ( (self.__As[iNs] / self.__Aso[iNs]) *
                                                    phi[iNs*M:(iNs+1)*M,iNs*L:(iNs+1)*L] )
 
         Eq1_Wm = RM
@@ -187,8 +254,8 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
         Eq7_Wm = In
         Eq7_Xm = -RM
-        Eq7_Wg = -self._rotor._magnets[0]._mat._mur * MG
-        Eq7_Xg = self._rotor._magnets[0]._mat._mur * In
+        Eq7_Wg = -self.__mur[0] * MG
+        Eq7_Xg = self.__mur[0] * In
 
         Eq8_Wm = -In
         Eq8_Xm = -RM
@@ -197,8 +264,8 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
         Eq9_Ym = -In
         Eq9_Zm = RM
-        Eq9_Yg = self._rotor._magnets[0]._mat._mur * MG
-        Eq9_Zg = -self._rotor._magnets[0]._mat._mur * In
+        Eq9_Yg = self.__mur[0] * MG
+        Eq9_Zg = -self.__mur[0] * In
 
         Eq10_Ym = -In
         Eq10_Zm = -RM
@@ -268,14 +335,14 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
 
     def __assembly_b_nl(self, pos = [0.0]):
-        Nharms = np.arange(2, self._n_harms + 1)
+        Nharms = np.arange(2, self.__n_harms + 1)
         N = len(Nharms)
-        Mharms = np.arange(1, self._m_harms)
+        Mharms = np.arange(1, self.__m_harms)
         M = len(Mharms)
-        Lharms = np.arange(1, self._l_harms)
+        Lharms = np.arange(1, self.__l_harms)
         L = len(Lharms)
-        MNs = M * self._Ns
-        LNs = L * self._Ns
+        MNs = M * self.__Ns
+        LNs = L * self.__Ns
 
         Zero_n = np.zeros((N, len(pos)))
         Zero_m = np.zeros((MNs, len(pos)))
@@ -288,8 +355,8 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         Eq10 = np.zeros((N, len(pos)))
 
         for p in range(0, len(pos)):
-            self._Mrn, self._Mtn = get_fs_coeff(self._magType, self._n_harms, self._pp, pos[p], self._M,
-                         self._alpha_p_v, self._delta_v, 0)
+            self._Mrn, self._Mtn = get_fs_coeff(self.__magnetisation, self.__n_harms, self.__pp, pos[p], self.__M,
+                         self.__alpha_p_v, self.__delta_v, 0)
 
             Mrcn = 2.0 * np.real(self._Mrn)
             Mrsn = -2.0 * np.imag(self._Mrn)
@@ -299,17 +366,17 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             for i in range(0, N):
                 n = Nharms[i]-1
                 if (np.abs(n)==1):
-                    factor_Rr = np.log(self._oRr) / 2.0
-                    factor_Rm = np.log(self._Rm) / 2.0
+                    factor_Rr = np.log(self.__oRr) / 2.0
+                    factor_Rm = np.log(self.__Rm) / 2.0
                 else:
                     factor_Rr = factor_Rm = 1.0 / (n**2 - 1.0)
 
-                Eq1[i,p] = MU0 * self._oRr * factor_Rr * (Mrsn[i+1] - n * Mtcn[i+1])
-                Eq2[i,p] = MU0 * self._oRr * factor_Rr * (Mrcn[i+1] + n * Mtsn[i+1])
-                Eq7[i,p] = MU0 * self._Rm * factor_Rm * (Mrsn[i+1] - n * Mtcn[i+1])
-                Eq8[i,p] = MU0 * self._Rm * factor_Rm * (Mtcn[i+1] - n * Mrsn[i+1])
-                Eq9[i,p] = MU0 * self._Rm * factor_Rm * (Mrcn[i+1] + n * Mtsn[i+1])
-                Eq10[i,p] = MU0 * self._Rm * factor_Rm * (Mtsn[i+1] + n * Mrcn[i+1])
+                Eq1[i,p] = MU0 * self.__oRr * factor_Rr * (Mrsn[i+1] - n * Mtcn[i+1])
+                Eq2[i,p] = MU0 * self.__oRr * factor_Rr * (Mrcn[i+1] + n * Mtsn[i+1])
+                Eq7[i,p] = MU0 * self.__Rm * factor_Rm * (Mrsn[i+1] - n * Mtcn[i+1])
+                Eq8[i,p] = MU0 * self.__Rm * factor_Rm * (Mtcn[i+1] - n * Mrsn[i+1])
+                Eq9[i,p] = MU0 * self.__Rm * factor_Rm * (Mrcn[i+1] + n * Mtsn[i+1])
+                Eq10[i,p] = MU0 * self.__Rm * factor_Rm * (Mtsn[i+1] + n * Mrcn[i+1])
 
         self._b_ = np.concatenate((Eq1, Eq2, Eq7, Eq8, Eq9, Eq10, Zero_n, Zero_n, Zero_m,
                                       Zero_m, Zero_l), axis=0)
@@ -320,14 +387,14 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             b = np.tile(self._b_, 2)
             self._b_ = b
         else:
-            Nharms = np.arange(2, self._n_harms + 1)
+            Nharms = np.arange(2, self.__n_harms + 1)
             N = len(Nharms)
-            Mharms = np.arange(1, self._m_harms)
+            Mharms = np.arange(1, self.__m_harms)
             M = len(Mharms)
-            Lharms = np.arange(1, self._l_harms)
+            Lharms = np.arange(1, self.__l_harms)
             L = len(Lharms)
-            MNs = M * self._Ns
-            LNs = L * self._Ns
+            MNs = M * self.__Ns
+            LNs = L * self.__Ns
 
             Zero_n = np.zeros((N, len(pos)))
             Zero_m = np.zeros((MNs, len(pos)))
@@ -346,8 +413,8 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             Eq14 = np.zeros((MNs, len(pos)))
             Eq15 = np.zeros((LNs, len(pos)))
 
-            eta_o = np.zeros((N, self._Ns))
-            xi_o = np.zeros((N, self._Ns))
+            eta_o = np.zeros((N, self.__Ns))
+            xi_o = np.zeros((N, self.__Ns))
             SOS = np.zeros((LNs, LNs))
             E = np.zeros((LNs, LNs))
             phi = np.zeros((MNs, LNs))
@@ -355,13 +422,13 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             V_o = np.zeros((LNs, 1))
             Jn = np.zeros((LNs, 1))
 
-            C = self._stator._winding._C
+            C = self.__C
 
             for p in range(0, len(pos)):
 
 
-                self._Mrn, self._Mtn = get_fs_coeff(self._magType, self._n_harms, self._pp, pos[p], self._M,
-                                                    self._alpha_p_v, self._delta_v, 0)
+                self._Mrn, self._Mtn = get_fs_coeff(self.__magnetisation, self.__n_harms, self.__pp, pos[p], self.__M,
+                                                    self.__alpha_p_v, self.__delta_v, 0)
 
                 Mrcn = 2.0 * np.real(self._Mrn)
                 Mrsn = -2.0 * np.imag(self._Mrn)
@@ -371,65 +438,65 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
                 for i in range(0, N):
                     n = Nharms[i] - 1
                     if (np.abs(n) == 1):
-                        factor_Rr = np.log(self._oRr) / 2.0
-                        factor_Rm = np.log(self._Rm) / 2.0
+                        factor_Rr = np.log(self.__oRr) / 2.0
+                        factor_Rm = np.log(self.__Rm) / 2.0
                     else:
                         factor_Rr = factor_Rm = 1.0 / (n ** 2 - 1.0)
 
-                    Eq1[i, p] = MU0 * self._oRr * factor_Rr * (Mrsn[i + 1] - n * Mtcn[i + 1])
-                    Eq2[i, p] = MU0 * self._oRr * factor_Rr * (Mrcn[i + 1] + n * Mtsn[i + 1])
-                    Eq7[i, p] = MU0 * self._Rm * factor_Rm * (Mrsn[i + 1] - n * Mtcn[i + 1])
-                    Eq8[i, p] = MU0 * self._Rm * factor_Rm * (Mtcn[i + 1] - n * Mrsn[i + 1])
-                    Eq9[i, p] = MU0 * self._Rm * factor_Rm * (Mrcn[i + 1] + n * Mtsn[i + 1])
-                    Eq10[i, p] = MU0 * self._Rm * factor_Rm * (Mtsn[i + 1] + n * Mrcn[i + 1])
+                    Eq1[i, p] = MU0 * self.__oRr * factor_Rr * (Mrsn[i + 1] - n * Mtcn[i + 1])
+                    Eq2[i, p] = MU0 * self.__oRr * factor_Rr * (Mrcn[i + 1] + n * Mtsn[i + 1])
+                    Eq7[i, p] = MU0 * self.__Rm * factor_Rm * (Mrsn[i + 1] - n * Mtcn[i + 1])
+                    Eq8[i, p] = MU0 * self.__Rm * factor_Rm * (Mtcn[i + 1] - n * Mrsn[i + 1])
+                    Eq9[i, p] = MU0 * self.__Rm * factor_Rm * (Mrcn[i + 1] + n * Mtsn[i + 1])
+                    Eq10[i, p] = MU0 * self.__Rm * factor_Rm * (Mtsn[i + 1] + n * Mrcn[i + 1])
 
-                    eta_o[i,:] = (2.0 / (n * PI)) * (np.cos(n * self._alpha_so) *
-                                                        np.sin(n * self._Aso / 2.0))
-                    xi_o[i, :] = (2.0 / (n * PI)) * (np.sin(n * self._alpha_so) *
-                                                         np.sin(n * self._Aso / 2.0))
+                    eta_o[i,:] = (2.0 / (n * PI)) * (np.cos(n * self.__alpha_so) *
+                                                        np.sin(n * self.__Aso / 2.0))
+                    xi_o[i, :] = (2.0 / (n * PI)) * (np.sin(n * self.__alpha_so) *
+                                                         np.sin(n * self.__Aso / 2.0))
 
                 ###### This is valid only for concentrated winding and 3 phases
-                I1_p_I2 = np.dot(I[p,:], C[0:self._Nph, 0:self._Ns] + C[self._Nph:, 0:self._Ns])
-                I1_m_I2 = np.dot(I[p,:], C[0:self._Nph, 0:self._Ns] - C[self._Nph:, 0:self._Ns])
-                Jo = I1_p_I2 / self._Aso
+                I1_p_I2 = np.dot(I[p,:], C[0:self.__Nph, 0:self.__Ns] + C[self.__Nph:, 0:self.__Ns])
+                I1_m_I2 = np.dot(I[p,:], C[0:self.__Nph, 0:self.__Ns] - C[self.__Nph:, 0:self.__Ns])
+                Jo = I1_p_I2 / self.__Aso
 
-                for iNs in range(0, self._Ns):
-                    Fm = Mharms * PI / self._Aso[iNs]
-                    El = Lharms * PI / self._As[iNs]
-                    SOS[iNs * L:(iNs + 1) * L, iNs * L:(iNs + 1) * L] = np.diag((self._Rt / self._Rsb) ** El)
+                for iNs in range(0, self.__Ns):
+                    Fm = Mharms * PI / self.__Aso[iNs]
+                    El = Lharms * PI / self.__As[iNs]
+                    SOS[iNs * L:(iNs + 1) * L, iNs * L:(iNs + 1) * L] = np.diag((self.__Rt / self.__Rsb) ** El)
                     E[iNs * L:(iNs + 1) * L, iNs * L:(iNs + 1) * L] = np.diag(El)
                     aux_term6 = (np.dot(np.transpose([Fm ** 2]), rowVectorL) - np.dot(colVectorM, [El ** 2])) ** (-1)
-                    aux_term7 = np.sin(El * (self._alpha_so[iNs] - self._alpha_s[iNs] +
-                                             (self._As[iNs] - self._Aso[iNs]) / 2.0))
+                    aux_term7 = np.sin(El * (self.__alpha_so[iNs] - self.__alpha_s[iNs] +
+                                             (self.__As[iNs] - self.__Aso[iNs]) / 2.0))
                     aux_term8 = np.dot(colVectorM, [aux_term7])
-                    aux_term9 = np.sin(El * (self._alpha_so[iNs] - self._alpha_s[iNs] +
-                                             (self._As[iNs] + self._Aso[iNs]) / 2.0))
+                    aux_term9 = np.sin(El * (self.__alpha_so[iNs] - self.__alpha_s[iNs] +
+                                             (self.__As[iNs] + self.__Aso[iNs]) / 2.0))
                     aux_term10 = np.dot(np.transpose([-1 ** Mharms]), [aux_term9])
 
-                    phi[iNs * M:(iNs + 1) * M, iNs * L:(iNs + 1) * L] = ((2.0 / self._As[iNs]) *
+                    phi[iNs * M:(iNs + 1) * M, iNs * L:(iNs + 1) * L] = ((2.0 / self.__As[iNs]) *
                                                                          np.dot(colVectorM, [El]) * aux_term6 *
                                                                          (aux_term8 - aux_term10))
-                    V[iNs * M:(iNs + 1) * M, iNs * L:(iNs + 1) * L] = ((self._As[iNs] / self._Aso[iNs]) *
+                    V[iNs * M:(iNs + 1) * M, iNs * L:(iNs + 1) * L] = ((self.__As[iNs] / self.__Aso[iNs]) *
                                                                        phi[iNs * M:(iNs + 1) * M,
                                                                        iNs * L:(iNs + 1) * L])
                     aux_term11 = 4.0 * ((Lharms * PI) ** (-1))
-                    aux_term12 = np.sin(Lharms * PI * self._Aso[iNs] / (self._As[iNs] * 2.0))
+                    aux_term12 = np.sin(Lharms * PI * self.__Aso[iNs] / (self.__As[iNs] * 2.0))
                     aux_term13 = np.cos(Lharms * PI / 2.0 + Lharms * PI *
-                                        (self._alpha_so[iNs] - self._alpha_s[iNs]) / 2.0)
+                                        (self.__alpha_so[iNs] - self.__alpha_s[iNs]) / 2.0)
                     phi_o = aux_term11 * aux_term12 * aux_term13
                     V_o[iNs * L:(iNs + 1) * L,:] = np.transpose([phi_o]) * Jo[iNs]
-                    aux_term14 = np.sin(Lharms * PI / 2.0) / (Lharms * PI * self._As[iNs])
+                    aux_term14 = np.sin(Lharms * PI / 2.0) / (Lharms * PI * self.__As[iNs])
                     Jn[iNs * L:(iNs + 1) * L, :] = (8.0 * I1_m_I2[iNs] /
-                                                    (self._Rsb ** 2 - self._Rt ** 2 ))*\
+                                                    (self.__Rsb ** 2 - self.__Rt ** 2 ))*\
                                                    np.transpose([aux_term14])
 
                 Eq11[:,p] = -MU0 * np.dot(eta_o, Jo)
                 Eq12[:,p] = -MU0 * np.dot(xi_o, Jo)
                 tmp1 = np.diag((np.diag(E ** 2 - 4.0 * Ilns)) ** (-1))
-                tmp2 = Ilns * (self._Rt ** 2) - (2.0 * (self._Rsb ** 2) *
+                tmp2 = Ilns * (self.__Rt ** 2) - (2.0 * (self.__Rsb ** 2) *
                                                  np.dot(np.diag(E.diagonal() ** (-1)), SOS))
                 Eq14[:,p] = MU0 * V.dot(tmp1).dot(tmp2).dot(Jn).flatten()
-                tmp3 = Ilns * (self._Rt ** 2) - (self._Rsb ** 2) * SOS
+                tmp3 = Ilns * (self.__Rt ** 2) - (self.__Rsb ** 2) * SOS
                 Eq15[:,p] = (-MU0 * V_o + 2.0 * MU0 * tmp1.dot(tmp3).dot(Jn)).flatten()
 
 
@@ -452,12 +519,12 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             Lself:      Self Inductance
             Lmutual:    Mutual Inductance
         """
-        tao_s = 2 * PI * self._Rs / self._Ns
-        mur = self._rotor._magnets[0]._mat._mur
-        Ml = self._Rm - self._oRr
-        g = self._Rs - self._Rm
+        tao_s = 2 * PI * self.__Rs / self.__Ns
+        mur = self.__mur
+        Ml = self.__Rm - self.__oRr
+        g = self.__Rs - self.__Rm
         gc = g + Ml / mur
-        w0 = self._stator._slots[0]._w0
+        w0 = self.__w0
         kcs = tao_s / (tao_s - (2 * w0 / PI) * (np.arctan2(w0, 2 * gc) -
                                           (gc / w0) * np.log(1 + (w0 / (2 * gc))**2)))
         ge = gc * kcs
@@ -496,25 +563,25 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         self.__assembly_b_nl(pos=posNL)
         self.__assembly_b_ol(pos=posOL,samePos=samePos, I=current)
         unk = sl.solve(self._A_, self._b_)
-        Nharms = np.arange(2, self._n_harms + 1)
+        Nharms = np.arange(2, self.__n_harms + 1)
         N = len(Nharms)
         Wg = unk[4 * N:5 * N, : ]
         Xg = unk[5 * N:6 * N, : ]
         Yg = unk[6 * N:7 * N, : ]
         Zg = unk[7 * N:8 * N, : ]
-        g = self._Rs - self._Rm
+        g = self.__Rs - self.__Rm
         # Flux Density Close to stator for better prediction of flux linkage and
         # Radial forces
-        r = self._Rs - g / 2.0
+        r = self.__Rs - g / 2.0
         Bg_r = np.zeros((len(posNL)+len(posOL),len(psi)))
         Bg_t = np.zeros((len(posNL)+len(posOL),len(psi)))
         for p in range(0, len(posNL)+len(posOL)):
             for i in range(0, N):
                 n = Nharms[i] - 1
-                term1 = -(n / r) * ((Wg[i,p] * (r / self._Rs) ** n) + (Xg[i,p] * (r / self._Rm) ** (-n)))
-                term2 = (n / r) * ((Yg[i,p] * (r / self._Rs) ** n) + (Zg[i,p] * (r / self._Rm) ** (-n)))
-                term3 = -(n / r) * ((Wg[i,p] * (r / self._Rs) ** n) - (Xg[i,p] * (r / self._Rm) ** (-n)))
-                term4 = -(n / r) * ((Yg[i,p] * (r / self._Rs) ** n) - (Zg[i,p] * (r / self._Rm) ** (-n)))
+                term1 = -(n / r) * ((Wg[i,p] * (r / self.__Rs) ** n) + (Xg[i,p] * (r / self.__Rm) ** (-n)))
+                term2 = (n / r) * ((Yg[i,p] * (r / self.__Rs) ** n) + (Zg[i,p] * (r / self.__Rm) ** (-n)))
+                term3 = -(n / r) * ((Wg[i,p] * (r / self.__Rs) ** n) - (Xg[i,p] * (r / self.__Rm) ** (-n)))
+                term4 = -(n / r) * ((Yg[i,p] * (r / self.__Rs) ** n) - (Zg[i,p] * (r / self.__Rm) ** (-n)))
                 Bg_r[p,:] = Bg_r[p,:] + term1 * np.sin(n * psi) + term2 * np.cos(n * psi)
                 Bg_t[p,:] = Bg_t[p,:] + term3 * np.cos(n * psi) + term4 * np.sin(n * psi)
 
@@ -523,46 +590,46 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
 
     def get_settings_cogging(self, analysis=None):
-        final_pos = 360 / self._lcm
+        final_pos = 360 / self.__lcm
         steps = 7
         posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self._rotor._init_pos
         return posVector
 
 
     def get_settings_ripple(self, analysis=None):
-        final_pos = 360 / self._lcm
+        final_pos = 360 / self.__lcm
         steps = 7
         posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self._rotor._init_pos
-        thetaElec = self._pp * np.linspace(0, final_pos, steps) * DEG2RAD
-        Is = analysis._rippleCurrent / self._Cp
+        thetaElec = self.__pp * np.linspace(0, final_pos, steps) * DEG2RAD
+        Is = analysis._rippleCurrent / self.__Cp
         IVector = np.transpose([Is * np.sin(thetaElec), Is * np.sin(thetaElec - 2.0*PI/3.0),
                                 Is * np.sin(thetaElec + 2.0*PI/3.0)])
         return posVector, IVector
 
     def get_settings_static_torque(self,  pos=np.array([]), I=np.array([]), analysis=None):
-        final_pos = 360 / self._pp
+        final_pos = 360 / self.__pp
         steps = 7
         posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self._rotor._init_pos
-        Is = analysis._rippleCurrent / self._Cp
+        Is = analysis._rippleCurrent / self.__Cp
         IVector = np.transpose([Is * np.ones(steps), -0.5 * Is * np.ones(steps),
                                 -0.5 * Is * np.ones(steps)])
         return posVector, IVector
 
     def get_settings_inductance_calc(self, analysis=None):
         posVector = np.array([self._rotor._init_pos])
-        IVector = np.array([analysis._rippleCurrent, 0.0, 0.0]) / self._Cp
+        IVector = np.array([analysis._rippleCurrent, 0.0, 0.0]) / self.__Cp
         return posVector, IVector
 
 
     def get_settings_bemf(self, pos=[], analysis=None):
         init_pos = pos[-1]
         steps = 3
-        final_pos = 2*PI / (3 * self._pp) + self._rotor._init_pos       # Max span 120 electric degrees
+        final_pos = 2*PI / (3 * self.__pp) + self._rotor._init_pos       # Max span 120 electric degrees
         step_size = np.abs(init_pos - final_pos) / steps
         posVector = np.linspace(init_pos + step_size, final_pos - step_size, steps)
         return posVector, analysis._noLoadSpeed
 
-    def solve(self, analysis = Study()):
+    def solve(self):
 
         pos1 = self.get_settings_cogging(analysis=analysis)
         pos2, wr_nl = self.get_settings_bemf(pos=pos1, analysis=analysis)
@@ -579,26 +646,26 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
         Bg_r, Bg_t = self.get_ag_flux_density(posNL=posNL, posOL=posOL, samePos=False,
                                               current=I)
-        g = self._Rs - self._Rm
-        r = (self._Rs - g / 7.0)
-        Lstk = (self._stator._Sl + self._rotor._Rl) / 2.0
+        g = self.__Rs - self.__Rm
+        r = (self.__Rs - g / 7.0)
+        Lstk = (self.__Sl + self.__Rl) / 2.0
         torque = (Lstk * (r**2) / MU0) * np.trapz(Bg_r * Bg_t, axis=1, dx=PI/180)
         pos_nl_cs = (pos1-self._rotor._init_pos)*RAD2DEG
         cogging_cs = si.CubicSpline(pos_nl_cs,
                                     torque[0:len(pos1)],
                                     extrapolate='periodic')
-        cogging_acs = np.linspace(0,360/self._pp,180)
+        cogging_acs = np.linspace(0,360/self.__pp,180)
 
         pos_ol_cs = (pos3 - self._rotor._init_pos) * RAD2DEG
         ripple_cs = si.CubicSpline(pos_ol_cs,
                                     torque[len(posNL):len(posNL)+len(pos3)],
                                     extrapolate='periodic')
-        ripple_acs = np.linspace(0, 360 / self._pp, 180)
+        ripple_acs = np.linspace(0, 360 / self.__pp, 180)
 
         pos_st_cs = (pos4 - self._rotor._init_pos) * RAD2DEG
         staticTq_cs = si.CubicSpline(pos_st_cs,
                                    torque[len(posNL)+len(pos3):len(posNL)+len(posOL)-len(pos5)])
-        staticTq_acs = np.linspace(0, 360 / self._pp, 45)
+        staticTq_acs = np.linspace(0, 360 / self.__pp, 45)
 
         res = Result()
         res.cogging_torque_x = cogging_acs
@@ -624,7 +691,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         fl = np.zeros((nrows,3))
 
         for i in range(0, nrows):
-            fl[i] = (Lstk * r / self._Cp) * np.trapz(Bg_r[i,:] * res.wf,  dx=PI/180)
+            fl[i] = (Lstk * r / self.__Cp) * np.trapz(Bg_r[i,:] * res.wf,  dx=PI/180)
 
         fl_a = np.concatenate((fl[0:len(posNL), 0], fl[0:len(posNL), 2], fl[0:len(posNL), 1], fl[0:len(posNL), 0],
                                fl[len(posNL):len(posNL)+len(pos3), 0], fl[len(posNL):len(posNL)+len(pos3), 2],
@@ -641,10 +708,10 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
         pos_nl_bemf_cs = (posNL - self._rotor._init_pos) * RAD2DEG
 
-        pos_nl_abc = np.concatenate( (self._pp*pos_nl_bemf_cs,
-                                      self._pp*pos_nl_bemf_cs + 120,
-                                      self._pp*pos_nl_bemf_cs + 240,
-                                      self._pp*pos_nl_bemf_cs + 360 ), axis=0 )
+        pos_nl_abc = np.concatenate( (self.__pp*pos_nl_bemf_cs,
+                                      self.__pp*pos_nl_bemf_cs + 120,
+                                      self.__pp*pos_nl_bemf_cs + 240,
+                                      self.__pp*pos_nl_bemf_cs + 360 ), axis=0 )
 
         fl_a_nl_cs = si.CubicSpline(pos_nl_abc,
                                     fl_a[0:4*len(posNL)])
@@ -668,23 +735,23 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         bemf_b = np.zeros(EL_STEPS)
         bemf_c = np.zeros(EL_STEPS)
         for i in range(1,30,2):
-            bemf_a = ( bemf_a + (1.0/EL_STEPS) * ( 1j*i*wr_nl*self._pp*(PI/30) ) *
+            bemf_a = ( bemf_a + (1.0/EL_STEPS) * ( 1j*i*wr_nl*self.__pp*(PI/30) ) *
                        ( fft_magnet_flux[i]*np.exp( 1j*i*THETA_e_RAD ) -
                         np.conjugate(fft_magnet_flux[i])*np.exp( -1j*i*THETA_e_RAD ) ) )
-            bemf_b = ( bemf_b + (1.0/EL_STEPS) * ( 1j*i*wr_nl*self._pp*(PI/30) ) *
+            bemf_b = ( bemf_b + (1.0/EL_STEPS) * ( 1j*i*wr_nl*self.__pp*(PI/30) ) *
                        ( fft_magnet_flux[i]*np.exp( 1j*i*(THETA_e_RAD - PI_2by3) ) -
                         np.conjugate(fft_magnet_flux[i])*np.exp( -1j*i*(THETA_e_RAD - PI_2by3) ) ) )
-            bemf_c = (bemf_c + (1.0 / EL_STEPS) * (1j * i * wr_nl * self._pp * (PI / 30)) *
+            bemf_c = (bemf_c + (1.0 / EL_STEPS) * (1j * i * wr_nl * self.__pp * (PI / 30)) *
                       (fft_magnet_flux[i] * np.exp(1j * i * (THETA_e_RAD + PI_2by3)) -
                        np.conjugate(fft_magnet_flux[i]) * np.exp(-1j * i * (THETA_e_RAD + PI_2by3))))
 
         res.bemf_y = np.array( [ np.real( bemf_a ), np.real( bemf_b ), np.real( bemf_c )] )
         res.bemf_x = THETA_e_DEG
 
-        pos_ol_abc = np.concatenate( (self._pp*pos_ol_cs,
-                                      self._pp*pos_ol_cs + 120,
-                                      self._pp*pos_ol_cs + 240,
-                                      self._pp*pos_ol_cs + 360 ), axis=0 )
+        pos_ol_abc = np.concatenate( (self.__pp*pos_ol_cs,
+                                      self.__pp*pos_ol_cs + 120,
+                                      self.__pp*pos_ol_cs + 240,
+                                      self.__pp*pos_ol_cs + 360 ), axis=0 )
 
         fl_a_ol_cs = si.CubicSpline(pos_ol_abc,
                                     fl_a[4*len(posNL):4*(len(posNL)+len(pos3))])
@@ -705,12 +772,12 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         i_b_cs = si.CubicSpline(pos_ol_abc, i_b)
         i_c_cs = si.CubicSpline(pos_ol_abc, i_c)
 
-        res.phase_current_y = self._Cp * np.array( [  i_a_cs(THETA_e_DEG),
+        res.phase_current_y = self.__Cp * np.array( [  i_a_cs(THETA_e_DEG),
                                                     i_b_cs(THETA_e_DEG),
                                                    i_c_cs(THETA_e_DEG)])
         res.phase_current_x = THETA_e_DEG
 
-        fl_only_phA_current = (Lstk * r / self._Cp) * np.trapz(Bg_r[-1, :] * res.wf, dx=PI / 180)
+        fl_only_phA_current = (Lstk * r / self.__Cp) * np.trapz(Bg_r[-1, :] * res.wf, dx=PI / 180)
 
         res.self_inductance_ag = (np.abs((fl_only_phA_current[0] - res.nl_flux_linkage_y[0,0]) /
                                       (analysis._rippleCurrent)))
@@ -747,7 +814,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
         res.Ld = res.self_inductance - res.mutual_inductance
         res.Lq = res.Ld
-        Sb = self._stator._oSr - (self._stator._iSr + (self._stator._slots[0]).get_slot_total_height())
+        Sb = self._oSr - (self._iSr + (self._stator._slots[0]).get_slot_total_height())
         res.end_winding_leakage = self._stator._winding.end_winding_permeance(Sb)
 
 
