@@ -1,14 +1,44 @@
 {
   "analysis" : {
     "solver" : "subdomain",
-    "noLoad" : {
-       "speed" : 1000.0
+    "noload" : {
+      "bemf" : true,
+      "speed" : 1000.0,
+      "cogging" : true,
+      "pressure" : true
     },
-    "ripple" : {
-       "speed" : 1.0,
-       "current" : 130.0,
-       "voltage" : null,
-       "gamma" : 0.0
+    "load" : {
+      "ripple" : true,
+      "speed" : 1.0,
+      "current" : 130.0,
+      "voltage" : null,
+      "gamma" : 0.0,
+      "losses" : true,
+      "pressure" : true
+    },
+    "inductance" : {
+      "max_current" : 10,
+      "steps" : 5
+    },
+    "torque_vs_load" : {
+      "max_current" : 100,
+      "max_voltage" : null,
+      "steps" : 5,
+      "gamma" : 0.0
+    },
+    "torque_vs_speed" : {
+      "max_speed" : 5000,
+      "max_power" : 1000,
+      "max_current" : 100,
+      "max_voltage" : 20,
+      "init_gamma" : 0.0,
+      "flux_weakening" : true,
+      "efficiency_map" : true
+    },
+    "winding" : {
+      "winding_function" : true,
+      "winding_harmonics" : true,
+      "winding_factors" : true
     }
   }
 }

@@ -59,12 +59,12 @@ def main(argv=None):
     try:
         try:
             opts, args = getopt.getopt(argv[1:], "hd:m:a:l:o:ps:", ["help","dir","machine","analysis","log","ouput","plot","save"])
-        except getopt.error, msg:
+        except getopt.GetoptError as msg:
              raise Usage(msg)
         loglevel = LOG_ALL
         for opt, arg in opts:
             if opt in ("-h", "--help"):
-                print 'emapny.py -d [dir_name] -m [machine_file] -a [analysis_file] -l [level] -o [output_file] -p -s [database_file]'
+                print ('emapny.py -d [dir_name] -m [machine_file] -a [analysis_file] -l [level] -o [output_file] -p -s [database_file]')
                 sys.exit()
             elif opt in ("-d", "--dir"):
                 dir = arg
@@ -81,9 +81,9 @@ def main(argv=None):
             elif opt in ("-s", "--save"):
                 db_file = arg
 
-    except Usage, err:
-        print >>sys.stderr, err.msg
-        print >>sys.stderr, "for help use --help"
+    except Usage as err:
+        print (err.msg, file=sys.stderr)
+        print("for help use --help", file=sys.stderr)
         return 2
 
     analysis_filename = "%s/%s" % (dir, analysis_file)
@@ -119,9 +119,9 @@ def main(argv=None):
     analysis = Analysis(analysis_settings['analysis'], machine)
     success = analysis.solve()
     if success:
-        results = analysis.get_results()
+        res = analysis.get_results()
     else:
-        print 'Something went wrong'
+        print ('Something went wrong')
 
 
     finish = time.clock()
@@ -131,7 +131,7 @@ def main(argv=None):
 
 
     #db_config = db.read_db_config(filename='./database/heman_config.ini')
-
+    rid = 1
     sql1 = """
         UPDATE Results SET Resistance_Stator=%s, Ke=%s, status=%s
         WHERE id=%s
@@ -290,7 +290,7 @@ def main(argv=None):
 
         plt.figure(11)
         plt.title('Radial Pressure Harmonics')
-        x = np.arange(0, 5 * GCD(len(slts),len(pms)) + 1, 1)
+        x = np.arange(0, 5 * GCD(machine.stator.slots_number, 2*machine.rotor.pp) + 1, 1)
         plt.bar(x - 0.2, res.pressure_radial_nl[x], width=0.4, label='No Load')
         plt.bar(x + 0.2, res.pressure_radial_ol[x], width=0.4, label='On Load')
         plt.legend()

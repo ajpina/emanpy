@@ -49,3 +49,7 @@ class Analysis(object):
 
     def get_results(self):
         return self.solver_instance.get_results()
+
+
+
+

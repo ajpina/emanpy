@@ -68,6 +68,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
     __M = np.ones(6) * 1.2 / MU0
     __mur = np.ones(6) * 1.1
     __magnetisation = 'Parallel'
+    __init_pos = 0
     __C = np.zeros((6, 9))
     __Nph = 3
     __Ct = 20
@@ -75,6 +76,8 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
     __Cs = 1
     __gcd = 3
     __lcm = 18
+    __Sl = 30e-3
+    __Rl = 30e-3
 
     def __init__(self, analysis_settings, spm):
         self.type = "Surface Permanent Magnet Machine - Inner Rotor - Subdomain"
@@ -82,6 +85,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         self.__Ns = spm.stator.slots_number
         self.__oRr = spm.rotor.outer_radius
         self.__Rm = spm.rotor.magnets[0].length + spm.rotor.outer_radius
+        self.__init_pos = spm.rotor.rotor_position
         self.__Rs = spm.stator.inner_radius
         self.__Aso = np.zeros(self.__Ns)
         self.__As = np.zeros(self.__Ns)
@@ -89,10 +93,14 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         self.__alpha_s = np.zeros(self.__Ns)
         self.__gcd = GCD(self.__Ns, 2 * self.__pp)
         self.__lcm = LCM(self.__Ns, 2 * self.__pp)
+        self.__Sl = spm.stator.stack_length
+        self.__Rl = spm.rotor.stack_length
+        self.__results = Result()
 
-        self.set_slot_geometry(spm)
-        self.set_magnet_geometry(spm)
-        self.set_winding_definition(spm)
+        self.__set_slot_geometry(spm)
+        self.__set_magnet_geometry(spm)
+        self.__set_winding_definition(spm)
+        self.__configure(analysis_settings)
 
         log_msg = "[SPM] Magnet Widths: " + str(self.__alpha_p_v)
         logging.debug(log_msg)
@@ -105,7 +113,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
 
 
-    def set_slot_geometry(self, spm):
+    def __set_slot_geometry(self, spm):
         slot = spm.stator.slots[0]
         if slot.get_type() == 'Type0':
             self.__Rt = spm.stator.inner_radius + (slot.h0 + slot.h1) / 2.0
@@ -124,7 +132,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
                 self.__alpha_so[i] = sl.so_position * DEG2RAD
                 self.__alpha_s[i] = sl.s_position * DEG2RAD
 
-    def set_magnet_geometry(self, spm):
+    def __set_magnet_geometry(self, spm):
         magnet = spm.rotor.magnets[0]
         if magnet.get_type() == 'Arc':
             self.__alpha_p_v = np.zeros(2 * self.__pp)
@@ -151,7 +159,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
             self.__magnetisation = mn.magnetisation
 
-    def set_winding_definition(self, spm):
+    def __set_winding_definition(self, spm):
         winding = spm.stator.winding
         if winding.get_type() == 'Concentrated':
             self.__Nph = winding.phases
@@ -166,7 +174,29 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             self.__Cs = winding.coil_series
             self.__C = winding.conn_matrix
 
+        #self.__results.stator_coil_resistance, self.__results.stator_phase_resistance = winding.get_resistances()
+        self.__results.td = winding.turns_density(m=3, Ns=self.__Ns)
+        self.__results.wf = winding.winding_function(m=3, pp= self.__pp, Ns= self.__Ns)
+        self.__results.wh = winding.winding_harmonics(m=3, pp= self.__pp, Ns= self.__Ns)
+        self.__results.kw_v = winding.winding_factors(m=3, pp=self.__pp, Ns=self.__Ns)
 
+    def __configure(self, analysis_settings):
+        self.noload_bemf = analysis_settings['noload'].get('bemf', False)
+        self.noload_speed = analysis_settings['noload'].get('speed', 1000)
+        self.cogging = analysis_settings['noload'].get('cogging', False)
+        self.noload_pressure = analysis_settings['noload'].get('pressure', False)
+        self.rippe = analysis_settings['load'].get('ripple', False)
+        self.load_speed = analysis_settings['load'].get('speed', 1000)
+        self.load_current = analysis_settings['load'].get('current', 100)
+        self.load_voltage = analysis_settings['load'].get('voltage', None)
+        self.load_gamma = analysis_settings['load'].get('gamma', 0)
+        self.load_losses = analysis_settings['load'].get('losses', False)
+        self.load_pressure = analysis_settings['load'].get('pressure', False)
+        self.inductance_max_current = analysis_settings['inductance'].get('max_current', 10)
+        self.inductance_steps = analysis_settings['inductance'].get('steps', 5)
+        self.winding_function = analysis_settings['winding'].get('winding_function', False)
+        self.winding_harmonics = analysis_settings['winding'].get('winding_harmonics', False)
+        self.winding_factors = analysis_settings['winding'].get('winding_factors', False)
 
     def __assembly_A(self):
         Nharms = np.arange(2, self.__n_harms+1)
@@ -524,14 +554,14 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         Ml = self.__Rm - self.__oRr
         g = self.__Rs - self.__Rm
         gc = g + Ml / mur
-        w0 = self.__w0
+        w0 = self.__Aso[0] * self.__Rs
         kcs = tao_s / (tao_s - (2 * w0 / PI) * (np.arctan2(w0, 2 * gc) -
                                           (gc / w0) * np.log(1 + (w0 / (2 * gc))**2)))
         ge = gc * kcs
 
-        Ps = self._stator._winding.slot_permeances()
+        #Ps = self._stator._winding.slot_permeances()
 
-        print gc, kcs, ge, Ps
+        #print (gc, kcs, ge, Ps)
         Lself = 0.0
         Lmutual = 0.0
 
@@ -589,53 +619,54 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
 
 
-    def get_settings_cogging(self, analysis=None):
+    def __get_settings_cogging(self):
         final_pos = 360 / self.__lcm
         steps = 7
-        posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self._rotor._init_pos
+        posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self.__init_pos
         return posVector
 
 
-    def get_settings_ripple(self, analysis=None):
+    def __get_settings_ripple(self):
         final_pos = 360 / self.__lcm
         steps = 7
-        posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self._rotor._init_pos
+        posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self.__init_pos
         thetaElec = self.__pp * np.linspace(0, final_pos, steps) * DEG2RAD
-        Is = analysis._rippleCurrent / self.__Cp
+        Is = self.load_current / self.__Cp
         IVector = np.transpose([Is * np.sin(thetaElec), Is * np.sin(thetaElec - 2.0*PI/3.0),
                                 Is * np.sin(thetaElec + 2.0*PI/3.0)])
         return posVector, IVector
 
-    def get_settings_static_torque(self,  pos=np.array([]), I=np.array([]), analysis=None):
+    def __get_settings_static_torque(self,  pos=np.array([]), I=np.array([])):
         final_pos = 360 / self.__pp
         steps = 7
-        posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self._rotor._init_pos
-        Is = analysis._rippleCurrent / self.__Cp
+        posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self.__init_pos
+        Is = self.load_current / self.__Cp
         IVector = np.transpose([Is * np.ones(steps), -0.5 * Is * np.ones(steps),
                                 -0.5 * Is * np.ones(steps)])
         return posVector, IVector
 
-    def get_settings_inductance_calc(self, analysis=None):
-        posVector = np.array([self._rotor._init_pos])
-        IVector = np.array([analysis._rippleCurrent, 0.0, 0.0]) / self.__Cp
+    def __get_settings_inductance_calc(self):
+        posVector = np.array([self.__init_pos])
+        IVector = np.array([self.load_current, 0.0, 0.0]) / self.__Cp
         return posVector, IVector
 
-
-    def get_settings_bemf(self, pos=[], analysis=None):
+    def __get_settings_bemf(self, pos=[]):
         init_pos = pos[-1]
         steps = 3
-        final_pos = 2*PI / (3 * self.__pp) + self._rotor._init_pos       # Max span 120 electric degrees
+        final_pos = 2*PI / (3 * self.__pp) + self.__init_pos       # Max span 120 electric degrees
         step_size = np.abs(init_pos - final_pos) / steps
         posVector = np.linspace(init_pos + step_size, final_pos - step_size, steps)
-        return posVector, analysis._noLoadSpeed
+        return posVector, self.noload_speed
 
     def solve(self):
+        if self.cogging:
+            pos1 = self.__get_settings_cogging()
+        if self.noload_bemf:
+            pos2, wr_nl = self.__get_settings_bemf(pos=pos1)
 
-        pos1 = self.get_settings_cogging(analysis=analysis)
-        pos2, wr_nl = self.get_settings_bemf(pos=pos1, analysis=analysis)
-        pos3, I1 = self.get_settings_ripple(analysis=analysis)
-        pos4, I2 = self.get_settings_static_torque(analysis=analysis)
-        pos5, I3 = self.get_settings_inductance_calc(analysis=analysis)
+        pos3, I1 = self.__get_settings_ripple()
+        pos4, I2 = self.__get_settings_static_torque()
+        pos5, I3 = self.__get_settings_inductance_calc()
 
 
         posNL = np.hstack((pos1, pos2))
@@ -650,40 +681,35 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         r = (self.__Rs - g / 7.0)
         Lstk = (self.__Sl + self.__Rl) / 2.0
         torque = (Lstk * (r**2) / MU0) * np.trapz(Bg_r * Bg_t, axis=1, dx=PI/180)
-        pos_nl_cs = (pos1-self._rotor._init_pos)*RAD2DEG
+        pos_nl_cs = (pos1-self.__init_pos)*RAD2DEG
         cogging_cs = si.CubicSpline(pos_nl_cs,
                                     torque[0:len(pos1)],
                                     extrapolate='periodic')
         cogging_acs = np.linspace(0,360/self.__pp,180)
 
-        pos_ol_cs = (pos3 - self._rotor._init_pos) * RAD2DEG
+        pos_ol_cs = (pos3 - self.__init_pos) * RAD2DEG
         ripple_cs = si.CubicSpline(pos_ol_cs,
                                     torque[len(posNL):len(posNL)+len(pos3)],
                                     extrapolate='periodic')
         ripple_acs = np.linspace(0, 360 / self.__pp, 180)
 
-        pos_st_cs = (pos4 - self._rotor._init_pos) * RAD2DEG
+        pos_st_cs = (pos4 - self.__init_pos) * RAD2DEG
         staticTq_cs = si.CubicSpline(pos_st_cs,
                                    torque[len(posNL)+len(pos3):len(posNL)+len(posOL)-len(pos5)])
         staticTq_acs = np.linspace(0, 360 / self.__pp, 45)
 
-        res = Result()
-        res.cogging_torque_x = cogging_acs
-        res.cogging_torque_y = cogging_cs(cogging_acs)
-        res.torque_ripple_x = ripple_acs
-        res.torque_ripple_y = ripple_cs(ripple_acs)
-        res.static_torque_x = staticTq_acs
-        res.static_torque_y = staticTq_cs(staticTq_acs)
-        res.nl_Bg_theta = np.linspace(0, 360, 360)
-        res.nl_Bg_r = Bg_r[0,:]
-        res.nl_Bg_t = Bg_t[0,:]
-        res.ol_Bg_r = Bg_r[len(posNL), :]
-        res.ol_Bg_t = Bg_t[len(posNL), :]
-        res.stator_coil_resistance, res.stator_phase_resistance = self._stator.get_resistances()
-        res.td = self._stator._winding.turns_density(m=3, Ns=self._Ns)
-        res.wf = self._stator._winding.winding_function(m=3, pp= self._pp, Ns= self._Ns)
-        res.wh = self._stator._winding.winding_harmonics(m=3, pp= self._pp, Ns= self._Ns)
-        res.kw_v = self._stator._winding.winding_factors(m=3, pp=self._pp, Ns=self._Ns)
+
+        self.__results.cogging_torque_x = cogging_acs
+        self.__results.cogging_torque_y = cogging_cs(cogging_acs)
+        self.__results.torque_ripple_x = ripple_acs
+        self.__results.torque_ripple_y = ripple_cs(ripple_acs)
+        self.__results.static_torque_x = staticTq_acs
+        self.__results.static_torque_y = staticTq_cs(staticTq_acs)
+        self.__results.nl_Bg_theta = np.linspace(0, 360, 360)
+        self.__results.nl_Bg_r = Bg_r[0,:]
+        self.__results.nl_Bg_t = Bg_t[0,:]
+        self.__results.ol_Bg_r = Bg_r[len(posNL), :]
+        self.__results.ol_Bg_t = Bg_t[len(posNL), :]
 
 
         nrows = len(posNL) + len(pos3)
@@ -691,7 +717,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         fl = np.zeros((nrows,3))
 
         for i in range(0, nrows):
-            fl[i] = (Lstk * r / self.__Cp) * np.trapz(Bg_r[i,:] * res.wf,  dx=PI/180)
+            fl[i] = (Lstk * r / self.__Cp) * np.trapz(Bg_r[i,:] * self.__results.wf,  dx=PI/180)
 
         fl_a = np.concatenate((fl[0:len(posNL), 0], fl[0:len(posNL), 2], fl[0:len(posNL), 1], fl[0:len(posNL), 0],
                                fl[len(posNL):len(posNL)+len(pos3), 0], fl[len(posNL):len(posNL)+len(pos3), 2],
@@ -706,7 +732,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
                                fl[len(posNL):len(posNL)+len(pos3), 0], fl[len(posNL):len(posNL)+len(pos3), 2] ),
                               axis=0)
 
-        pos_nl_bemf_cs = (posNL - self._rotor._init_pos) * RAD2DEG
+        pos_nl_bemf_cs = (posNL - self.__init_pos) * RAD2DEG
 
         pos_nl_abc = np.concatenate( (self.__pp*pos_nl_bemf_cs,
                                       self.__pp*pos_nl_bemf_cs + 120,
@@ -720,16 +746,15 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         fl_c_nl_cs = si.CubicSpline(pos_nl_abc,
                                     fl_c[0:4*len(posNL)])
 
-
-        res.nl_flux_linkage_y = np.array( [fl_a_nl_cs(THETA_e_DEG),
+        self.__results.nl_flux_linkage_y = np.array( [fl_a_nl_cs(THETA_e_DEG),
                                          fl_b_nl_cs(THETA_e_DEG),
                                          fl_c_nl_cs(THETA_e_DEG)] )
-        res.nl_flux_linkage_x = THETA_e_DEG
+        self.__results.nl_flux_linkage_x = THETA_e_DEG
 
 
         # Extract fundamental of flux linkage due to magnet
-        fft_magnet_flux = fft(res.nl_flux_linkage_y[0,:])
-        res.magnet_flux = (2.0 / len(res.nl_flux_linkage_y[0,:])) * np.abs(fft_magnet_flux[1])
+        fft_magnet_flux = fft(self.__results.nl_flux_linkage_y[0,:])
+        self.__results.magnet_flux = (2.0 / len(self.__results.nl_flux_linkage_y[0,:])) * np.abs(fft_magnet_flux[1])
 
         bemf_a = np.zeros( EL_STEPS )
         bemf_b = np.zeros(EL_STEPS)
@@ -745,8 +770,8 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
                       (fft_magnet_flux[i] * np.exp(1j * i * (THETA_e_RAD + PI_2by3)) -
                        np.conjugate(fft_magnet_flux[i]) * np.exp(-1j * i * (THETA_e_RAD + PI_2by3))))
 
-        res.bemf_y = np.array( [ np.real( bemf_a ), np.real( bemf_b ), np.real( bemf_c )] )
-        res.bemf_x = THETA_e_DEG
+        self.__results.bemf_y = np.array( [ np.real( bemf_a ), np.real( bemf_b ), np.real( bemf_c )] )
+        self.__results.bemf_x = THETA_e_DEG
 
         pos_ol_abc = np.concatenate( (self.__pp*pos_ol_cs,
                                       self.__pp*pos_ol_cs + 120,
@@ -760,10 +785,10 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         fl_c_ol_cs = si.CubicSpline(pos_ol_abc,
                                     fl_c[4*len(posNL):4*(len(posNL)+len(pos3))])
 
-        res.ol_flux_linkage_y = np.array( [fl_a_ol_cs(THETA_e_DEG),
+        self.__results.ol_flux_linkage_y = np.array( [fl_a_ol_cs(THETA_e_DEG),
                                          fl_b_ol_cs(THETA_e_DEG),
                                          fl_c_ol_cs(THETA_e_DEG)] )
-        res.ol_flux_linkage_x = THETA_e_DEG
+        self.__results.ol_flux_linkage_x = THETA_e_DEG
 
         i_a = np.concatenate((I1[:, 0], I1[:, 2], I1[:, 1], I1[:, 0]))
         i_b = np.concatenate((I1[:, 1], I1[:, 0], I1[:, 2], I1[:, 1]))
@@ -772,27 +797,27 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         i_b_cs = si.CubicSpline(pos_ol_abc, i_b)
         i_c_cs = si.CubicSpline(pos_ol_abc, i_c)
 
-        res.phase_current_y = self.__Cp * np.array( [  i_a_cs(THETA_e_DEG),
+        self.__results.phase_current_y = self.__Cp * np.array( [  i_a_cs(THETA_e_DEG),
                                                     i_b_cs(THETA_e_DEG),
                                                    i_c_cs(THETA_e_DEG)])
-        res.phase_current_x = THETA_e_DEG
+        self.__results.phase_current_x = THETA_e_DEG
 
-        fl_only_phA_current = (Lstk * r / self.__Cp) * np.trapz(Bg_r[-1, :] * res.wf, dx=PI / 180)
+        fl_only_phA_current = (Lstk * r / self.__Cp) * np.trapz(Bg_r[-1, :] * self.__results.wf, dx=PI / 180)
 
-        res.self_inductance_ag = (np.abs((fl_only_phA_current[0] - res.nl_flux_linkage_y[0,0]) /
-                                      (analysis._rippleCurrent)))
-        res.mutual_inductance_ag = -(np.abs((fl_only_phA_current[1] - res.nl_flux_linkage_y[1,0]) /
-                                         (analysis._rippleCurrent)))
+        self.__results.self_inductance_ag = (np.abs((fl_only_phA_current[0] - self.__results.nl_flux_linkage_y[0,0]) /
+                                      (self.load_current)))
+        self.__results.mutual_inductance_ag = -(np.abs((fl_only_phA_current[1] - self.__results.nl_flux_linkage_y[1,0]) /
+                                         (self.load_current)))
 
 
-        iq = np.average( K_QD[0, 0, :] * res.phase_current_y[0, :] +
-                         K_QD[0, 1, :] * res.phase_current_y[1, :] +
-                         K_QD[0, 2, :] * res.phase_current_y[2, :])
-        id = np.average( K_QD[1, 0, :] * res.phase_current_y[0, :] +
-                        K_QD[1, 1, :] * res.phase_current_y[1, :] +
-                        K_QD[1, 2, :] * res.phase_current_y[2, :])
+        iq = np.average( K_QD[0, 0, :] * self.__results.phase_current_y[0, :] +
+                         K_QD[0, 1, :] * self.__results.phase_current_y[1, :] +
+                         K_QD[0, 2, :] * self.__results.phase_current_y[2, :])
+        id = np.average( K_QD[1, 0, :] * self.__results.phase_current_y[0, :] +
+                        K_QD[1, 1, :] * self.__results.phase_current_y[1, :] +
+                        K_QD[1, 2, :] * self.__results.phase_current_y[2, :])
 
-        fl_abc_noMagnet = - res.nl_flux_linkage_y + res.ol_flux_linkage_y
+        fl_abc_noMagnet = - self.__results.nl_flux_linkage_y + self.__results.ol_flux_linkage_y
 
         fq = np.average(K_QD[0, 0, :] * fl_abc_noMagnet[0, :] +
                         K_QD[0, 1, :] * fl_abc_noMagnet[1, :] +
@@ -802,20 +827,20 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
                         K_QD[1, 2, :] * fl_abc_noMagnet[2, :])
 
         # Only Flux in q-axis
-        res.Lmq = fq / ( iq )
-        res.Lmd = res.Lmq
+        self.__results.Lmq = fq / ( iq )
+        self.__results.Lmd = self.__results.Lmq
 
-        res.self_inductance = ( res.self_inductance_ag +
-                                res.self_inductance_slot_leakage +
-                                res.self_inductance_end_winding_leakage )
-        res.mutual_inductance = ( res.mutual_inductance_ag +
-                                  res.mutual_inductance_slot_leakage +
-                                  res.mutual_inductance_end_winding_leakage )
+        self.__results.self_inductance = ( self.__results.self_inductance_ag +
+                                           self.__results.self_inductance_slot_leakage +
+                                           self.__results.self_inductance_end_winding_leakage )
+        self.__results.mutual_inductance = ( self.__results.mutual_inductance_ag +
+                                             self.__results.mutual_inductance_slot_leakage +
+                                             self.__results.mutual_inductance_end_winding_leakage )
 
-        res.Ld = res.self_inductance - res.mutual_inductance
-        res.Lq = res.Ld
-        Sb = self._oSr - (self._iSr + (self._stator._slots[0]).get_slot_total_height())
-        res.end_winding_leakage = self._stator._winding.end_winding_permeance(Sb)
+        self.__results.Ld = self.__results.self_inductance - self.__results.mutual_inductance
+        self.__results.Lq = self.__results.Ld
+        #Sb = self.__oSr - (self.__iSr + (self._stator._slots[0]).get_slot_total_height())
+        #res.end_winding_leakage = self._stator._winding.end_winding_permeance(Sb)
 
 
         # Calculate average pressure on different rotor positions
@@ -828,18 +853,18 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         Pr_fft_nl = np.average( fft(Pr[0:len(pos1),:]) / 1e6 , axis=0 )
         Pr_fft_ol = np.average( fft(Pr[len(posNL)+1:len(posNL)+1+len(pos3),:]) / 1e6 , axis=0 )
 
-
-        res.pressure_radial_nl = (2.0 / len(Pr_fft_nl)) * np.abs(Pr_fft_nl[0: 5 * self._gcd + 1])
-        res.pressure_radial_ol = (2.0 / len(Pr_fft_ol)) * np.abs(Pr_fft_ol[0: 5 * self._gcd + 1])
+        self.__results.pressure_radial_nl = (2.0 / len(Pr_fft_nl)) * np.abs(Pr_fft_nl[0: 5 * self.__gcd + 1])
+        self.__results.pressure_radial_ol = (2.0 / len(Pr_fft_ol)) * np.abs(Pr_fft_ol[0: 5 * self.__gcd + 1])
 
 
         self.get_self_and_mutual_inductance()
 
 
+        return True
 
 
-
-        return res
+    def get_results(self):
+        return self.__results
 
 
 
