@@ -85,7 +85,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
         self.__Ns = spm.stator.slots_number
         self.__oRr = spm.rotor.outer_radius
         self.__Rm = spm.rotor.magnets[0].length + spm.rotor.outer_radius
-        self.__init_pos = spm.rotor.rotor_position
+        self.__init_pos = spm.rotor.rotor_position * DEG2RAD
         self.__Rs = spm.stator.inner_radius
         self.__Aso = np.zeros(self.__Ns)
         self.__As = np.zeros(self.__Ns)
@@ -176,8 +176,8 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
         #self.__results.stator_coil_resistance, self.__results.stator_phase_resistance = winding.get_resistances()
         self.__results.td = winding.turns_density(m=3, Ns=self.__Ns)
-        self.__results.wf = winding.winding_function(m=3, pp= self.__pp, Ns= self.__Ns)
-        self.__results.wh = winding.winding_harmonics(m=3, pp= self.__pp, Ns= self.__Ns)
+        self.__results.wf = winding.winding_function(m=3, pp=self.__pp, Ns=self.__Ns)
+        self.__results.wh = winding.winding_harmonics(m=3, pp=self.__pp, Ns=self.__Ns)
         self.__results.kw_v = winding.winding_factors(m=3, pp=self.__pp, Ns=self.__Ns)
 
     def __configure(self, analysis_settings):
@@ -455,8 +455,6 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             C = self.__C
 
             for p in range(0, len(pos)):
-
-
                 self._Mrn, self._Mtn = get_fs_coeff(self.__magnetisation, self.__n_harms, self.__pp, pos[p], self.__M,
                                                     self.__alpha_p_v, self.__delta_v, 0)
 
@@ -622,7 +620,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
     def __get_settings_cogging(self):
         final_pos = 360 / self.__lcm
         steps = 7
-        posVector = np.linspace(0, final_pos, steps) * DEG2RAD + self.__init_pos
+        posVector = np.linspace(0, final_pos, steps) * DEG2RAD  + self.__init_pos
         return posVector
 
 
@@ -653,7 +651,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
     def __get_settings_bemf(self, pos=[]):
         init_pos = pos[-1]
         steps = 3
-        final_pos = 2*PI / (3 * self.__pp) + self.__init_pos       # Max span 120 electric degrees
+        final_pos = 2*PI / (3 * self.__pp) + self.__init_pos        # Max span 120 electric degrees
         step_size = np.abs(init_pos - final_pos) / steps
         posVector = np.linspace(init_pos + step_size, final_pos - step_size, steps)
         return posVector, self.noload_speed

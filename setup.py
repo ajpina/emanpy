@@ -32,7 +32,7 @@ setup(name='emanpy',
       classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'License :: OSI Approved :: Apache Software License',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Scientific/Engineering',
       ],
       keywords='motor generator',

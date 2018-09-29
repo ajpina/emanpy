@@ -45,7 +45,7 @@ def get_fs_coeff(type_mzt,n_harm,pp,rotor_pos,m_v,alpha_p_v,delta_v,dp):
 
     Args:
         type_mzt:   Type of magnetization:  (0) Radial
-                                            (1) Halback
+                                            (1) Halbach
                                             (2) Parallel
         n_harm:     Number of harmonics to computer
         pp:         Rotor pole pairs
@@ -59,7 +59,8 @@ def get_fs_coeff(type_mzt,n_harm,pp,rotor_pos,m_v,alpha_p_v,delta_v,dp):
         Mrn:        Fourier coefficients of radial magnetization
         Mtn:        Fourier coefficients of tangential magnetization
     """
-    
+
+
     Mrn = np.zeros(n_harm, dtype=np.complex)
     Mtn = np.zeros(n_harm, dtype=np.complex)
     theta_r = -rotor_pos
@@ -70,10 +71,10 @@ def get_fs_coeff(type_mzt,n_harm,pp,rotor_pos,m_v,alpha_p_v,delta_v,dp):
         theta_end =(np.pi/(2*pp))*(2*v+1+alpha_p_v[v])+delta_v[v]
         psi_init = (np.pi/(2*pp))*(2*v+1)+delta_v[v]
 
-        if type_mzt == 0:
+        if type_mzt == "Radial":
             RCo = (1/2/np.pi)*polarity*2*alpha_p_v[v]
             TCo = 0
-        elif type_mzt == 1:
+        elif type_mzt == "Halbach":
             RCo = polarity*(1j/(4*np.pi*pp))*\
                 (   np.exp(1j*pp*psi_init)*(np.exp(-1j*pp*theta_end)-\
                     np.exp(-1j*pp*theta_init))-np.exp(-1j*pp*psi_init)*\
@@ -83,7 +84,7 @@ def get_fs_coeff(type_mzt,n_harm,pp,rotor_pos,m_v,alpha_p_v,delta_v,dp):
                 (   np.exp(1j*pp*psi_init)*(np.exp(-1j*pp*theta_end)-\
                     np.exp(-1j*pp*theta_init))+np.exp(-1j*pp*psi_init)*\
                     (np.exp(1j*pp*theta_end)-np.exp(1j*pp*theta_init))  )
-        elif type_mzt == 2:
+        elif type_mzt == "Parallel":
             RCo = polarity*(1j/(4*np.pi))*\
                 (   np.exp(1j*psi_init)*(np.exp(-1j*theta_end)-\
                     np.exp(-1j*theta_init))-np.exp(-1j*psi_init)*\
@@ -100,12 +101,12 @@ def get_fs_coeff(type_mzt,n_harm,pp,rotor_pos,m_v,alpha_p_v,delta_v,dp):
         Mtn[0] = Mtn[0] + TCo
 
         for n in range(1,n_harm,1):
-            if type_mzt == 0:
+            if type_mzt == "Radial":
                 RCn = (1j/(2*np.pi*n))*polarity*\
                     (np.exp(-1j*n*theta_end)-np.exp(-1j*n*theta_init))*\
                     np.exp(1j*n*(theta_r))
                 TCn = 0
-            elif type_mzt == 1:
+            elif type_mzt == "Halbach":
                 if np.abs(n) != pp:
                     RCn = polarity*(1j/(4*np.pi))*\
                         (   np.exp(1j*pp*psi_init)*(np.exp(-1j*(pp+n)*theta_end)-\
@@ -135,7 +136,7 @@ def get_fs_coeff(type_mzt,n_harm,pp,rotor_pos,m_v,alpha_p_v,delta_v,dp):
                         (   np.exp(1j*pp*psi_init)*(theta_end-theta_init)+1j*np.exp(-1j*pp*psi_init)*\
                             (np.exp(1j*2*pp*theta_end)-np.exp(1j*2*pp*theta_init))/(2*pp)       )*\
                         np.exp(1j*n*(theta_r))
-            elif type_mzt == 2:
+            elif type_mzt == "Parallel":
                 if np.abs(n) != 1: 
                     RCn = polarity*(1j/(4*np.pi))*\
                         (   np.exp(1j*psi_init)*(np.exp(-1j*(1+n)*theta_end)-\

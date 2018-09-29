@@ -1,0 +1,17 @@
+   =========================================================================
+   ==  NOTICE file corresponding to the section 4 d of                    ==
+   ==  the Apache License, Version 2.0,                                   ==
+   ==  in this case for the emanpy-specific code.                        ==
+   =========================================================================
+
+EMAnPy Project
+Copyright 2014-2018 Dr. Alejandro Pina Ortega
+
+This product includes software developed as part of
+Electric Machine Analysis with Python Project (http://).
+
+Portions of this software were developed at
+Itecpo (http://www.itecpo.com).
+
+This product includes software written by Alejandro
+Pina Ortega (a.pina-ortega@ieee.org)
