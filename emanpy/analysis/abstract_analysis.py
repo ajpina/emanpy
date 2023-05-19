@@ -23,7 +23,7 @@ class Analysis(object):
 
     def __init__(self, analysis_settings, rotating_machine):
         self.solver_str = analysis_settings['solver']
-        if rotating_machine.get_type() == 'SPM':
+        if rotating_machine.get_machine_type() == 'SPM':
             if self.solver_str == 'subdomain':
                 from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
                 self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
@@ -33,6 +33,16 @@ class Analysis(object):
             else:
                 from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
                 self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
+        elif rotating_machine.get_machine_type() == 'SPM_Linear':
+            if self.solver_str == 'subdomain':
+                from emanpy.solvers import SPMOuterRotorAxialFluxSubDomain
+                self.solver_instance = SPMOuterRotorAxialFluxSubDomain(analysis_settings, rotating_machine)
+            elif self.solver_str == 'reluctance_network':
+                from emanpy.solvers import SPMOuterRotorAxialFluxSubDomain
+                self.solver_instance = SPMOuterRotorAxialFluxSubDomain(analysis_settings, rotating_machine)
+            else:
+                from emanpy.solvers import SPMOuterRotorAxialFluxSubDomain
+                self.solver_instance = SPMOuterRotorAxialFluxSubDomain(analysis_settings, rotating_machine)
         else:
             if self.solver_str == 'subdomain':
                 from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
@@ -43,7 +53,7 @@ class Analysis(object):
             else:
                 from emanpy.solvers import SPMInnerRotorRadialFluxSubDomain
                 self.solver_instance = SPMInnerRotorRadialFluxSubDomain(analysis_settings, rotating_machine)
-
+    
     def solve(self):
         return self.solver_instance.solve()
 

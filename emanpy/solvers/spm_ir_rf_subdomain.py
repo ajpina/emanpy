@@ -138,6 +138,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
             self.__alpha_p_v = np.zeros(2 * self.__pp)
             self.__delta_v = np.zeros(2 * self.__pp)
             self.__M = np.zeros(2 * self.__pp)
+            self.__mur = np.zeros(2 * self.__pp)
             for i, mn in enumerate(spm.rotor.magnets):
                 # IT'S MULTIPLIED BY POLE NUMBER
                 self.__alpha_p_v[i] = 2 * self.__pp * mn.mean_arc_angle
@@ -147,9 +148,10 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
             self.__magnetisation = mn.magnetisation
         else:
-            self.__alpha_p_v = np.zeros(2 * self._pp)
-            self.__delta_v = np.zeros(2 * self._pp)
-            self.__M = np.zeros(2 * self._pp)
+            self.__alpha_p_v = np.zeros(2 * self.__pp)
+            self.__delta_v = np.zeros(2 * self.__pp)
+            self.__M = np.zeros(2 * self.__pp)
+            self.__mur = np.zeros(2 * self.__pp)
             for i, mn in enumerate(spm.rotor.magnets):
                 # IT'S MULTIPLIED BY POLE NUMBER
                 self.__alpha_p_v[i] = 2 * self.__pp * mn.mean_arc_angle
@@ -161,7 +163,7 @@ class SPMInnerRotorRadialFluxSubDomain(Analysis):
 
     def __set_winding_definition(self, spm):
         winding = spm.stator.winding
-        if winding.get_type() == 'Concentrated':
+        if winding.get_type() == 'concentrated':
             self.__Nph = winding.phases
             self.__Ct = winding.turns_coil
             self.__Cp = winding.coil_parallel

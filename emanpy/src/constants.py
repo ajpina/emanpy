@@ -18,7 +18,7 @@
 # ==========================================================================
 
 import numpy as np
-import fractions
+import math
 
 
 LOG_CRITICAL = 0
@@ -39,13 +39,13 @@ PI_2by3 = 2.0 * np.pi / 3.0
 K_QD = (2.0 / 3.0) * np.array(([[np.sin(THETA_e_DEG * DEG2RAD),
                                 np.sin((THETA_e_DEG - 120) * DEG2RAD),
                                 np.sin((THETA_e_DEG + 120) * DEG2RAD)],
-                               [np.cos(THETA_e_DEG * DEG2RAD),
-                                np.cos((THETA_e_DEG - 120) * DEG2RAD),
-                                np.cos((THETA_e_DEG + 120) * DEG2RAD)]]))
+                               [-np.cos(THETA_e_DEG * DEG2RAD),
+                                -np.cos((THETA_e_DEG - 120) * DEG2RAD),
+                                -np.cos((THETA_e_DEG + 120) * DEG2RAD)]]))
 
 def LCM(a,b):
-    return abs(a * b) / fractions.gcd(a, b) if a and b else 0
+    return abs(a * b) / math.gcd(a, b) if a and b else 0
 
 def GCD(a,b):
-    return fractions.gcd(a, b)
+    return math.gcd(a, b)
 

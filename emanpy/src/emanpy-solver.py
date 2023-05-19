@@ -30,8 +30,8 @@
 #
 # Revision History:
 #      Date     Version  Author    Description
-#  - 12/23/15:  0.1.1              Calculate Flux Density, Cogging and Ripple
-#
+#  - 12/23/15:  0.1.1    ajpina    Calculate Flux Density, Cogging and Ripple
+#  - 05/01/23:  0.2      ajpina    Modified to test SD for axial flux
 # ==========================================================================
 
 import getopt
@@ -89,7 +89,7 @@ def main(argv=None):
     analysis_filename = "%s/%s" % (dir, analysis_file)
     machine_filename = "%s/%s" % (dir, machine_file)
 
-    start1 = time.clock()
+    start1 = time.perf_counter()
     with open(analysis_filename) as analysis_file:
         analysis_settings = json.load(analysis_file)
 
@@ -124,7 +124,7 @@ def main(argv=None):
         print ('Something went wrong')
 
 
-    finish = time.clock()
+    finish = time.perf_counter()
 
     log_msg = "[AA_SPM] Total time is %fsec" % (finish - start1)
     logging.info(log_msg)
@@ -213,50 +213,78 @@ def main(argv=None):
         plt.subplot(211)
         plt.plot(res.nl_Bg_theta, res.nl_Bg_r, label='No Load')
         plt.plot(res.nl_Bg_theta, res.ol_Bg_r, label='On Load')
+        plt.plot(res.nl_Bg_theta, res.nl_Bg2_r, label='No Load 2')
+        plt.plot(res.nl_Bg_theta, res.ol_Bg2_r, label='On Load 2')
         plt.legend()
         plt.subplot(212)
         plt.plot(res.nl_Bg_theta, res.nl_Bg_t, label='No Load')
         plt.plot(res.nl_Bg_theta, res.ol_Bg_t, label='On Load')
+        plt.plot(res.nl_Bg_theta, res.nl_Bg2_t, label='No Load 2')
+        plt.plot(res.nl_Bg_theta, res.ol_Bg2_t, label='On Load 2')
 
 
         plt.figure(2)
-        plt.plot(res.cogging_torque_x, res.cogging_torque_y, '-ro')
+        plt.plot(res.cogging_torque_x, -res.cogging_torque_y, '-ro')
+        plt.plot(res.cogging_torque_x, res.cogging_torque2_y, '-bo')
+        plt.plot(res.cogging_torque_x, -res.cogging_torque_y + res.cogging_torque2_y, '-ko')
         plt.title('Cogging Torque')
 
         plt.figure(3)
-        plt.plot(res.torque_ripple_x, res.torque_ripple_y, '-ro')
+        plt.plot(res.torque_ripple_x, -res.torque_ripple_y, '-ro')
+        plt.plot(res.torque_ripple_x, res.torque_ripple2_y, '-bo')
+        plt.plot(res.torque_ripple_x, -res.torque_ripple_y + res.torque_ripple2_y, '-ko')
         plt.title('Torque Ripple')
 
         plt.figure(4)
-        plt.plot(res.static_torque_x, res.static_torque_y, '-ro')
+        plt.plot(res.static_torque_x, -res.static_torque_y, '-ro')
+        plt.plot(res.static_torque_x, res.static_torque2_y, '-bo')
+        plt.plot(res.static_torque_x, -res.static_torque_y + res.static_torque2_y, '-ko')
         plt.title('Static Torque')
 
         plt.figure(5)
         plt.title('Winding Function - Turns Density')
-        plt.subplot(311)
+        plt.subplot(411)
         plt.plot(res.wf[0,:], label='Winding Function')
         plt.plot(res.td[0, :], label='Turns Density')
         plt.legend()
-        plt.subplot(312)
+        plt.subplot(412)
         plt.plot(res.wf[1,:])
         plt.plot(res.td[1, :])
-        plt.subplot(313)
+        plt.subplot(413)
         plt.plot(res.wf[2, :])
         plt.plot(res.td[2, :])
-
+        three_td1 = ( res.td[0, :] * res.phase_current_y[0,0] +
+                    res.td[1, :] * res.phase_current_y[1,0] +
+                    res.td[2, :] * res.phase_current_y[2,0] )
+        three_td2 = ( res.td[0, :] * res.phase_current_y[0,23] +
+                    res.td[1, :] * res.phase_current_y[1,23] +
+                    res.td[2, :] * res.phase_current_y[2,23] )
+        plt.subplot(414)
+        plt.plot(three_td1)
+        plt.plot(three_td2)
 
         plt.figure(6)
         plt.title('No Load Flux Linkage')
         plt.plot(res.nl_flux_linkage_x, res.nl_flux_linkage_y[0, :], '-o', color='blue', label='a')
         plt.plot(res.nl_flux_linkage_x, res.nl_flux_linkage_y[1, :], '-o', color='green', label='b')
         plt.plot(res.nl_flux_linkage_x, res.nl_flux_linkage_y[2, :], '-o', color='orange', label='c')
+        plt.plot(res.nl_flux_linkage_x, res.nl_flux_linkage_y[3, :], '-o', color='red', label='q')
+        plt.plot(res.nl_flux_linkage_x, res.nl_flux_linkage_y[4, :], '-o', color='black', label='d')
+        plt.plot(res.nl_flux_linkage_x, res.nl_flux_linkage2_y[0, :], '-+', color='blue', label='a')
+        plt.plot(res.nl_flux_linkage_x, res.nl_flux_linkage2_y[1, :], '-+', color='green', label='b')
+        plt.plot(res.nl_flux_linkage_x, res.nl_flux_linkage2_y[2, :], '-+', color='orange', label='c')
         plt.legend()
 
         plt.figure(7)
         plt.title('On Load Flux Linkage')
-        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage_y[0, :]-res.nl_flux_linkage_y[0, :], '-o', color='blue', label='a')
-        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage_y[1, :]-res.nl_flux_linkage_y[1, :], '-o', color='green', label='b')
-        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage_y[2, :]-res.nl_flux_linkage_y[2, :], '-o', color='orange', label='c')
+        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage_y[0, :]-0*res.nl_flux_linkage_y[0, :], '-o', color='blue', label='a')
+        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage_y[1, :]-0*res.nl_flux_linkage_y[1, :], '-o', color='green', label='b')
+        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage_y[2, :]-0*res.nl_flux_linkage_y[2, :], '-o', color='orange', label='c')
+        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage_y[3, :], '-o', color='red', label='q')
+        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage_y[4, :], '-o', color='black', label='d')
+        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage2_y[0, :]-0*res.nl_flux_linkage2_y[0, :], '-+', color='blue', label='a')
+        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage2_y[1, :]-0*res.nl_flux_linkage2_y[1, :], '-+', color='green', label='b')
+        plt.plot(res.ol_flux_linkage_x, res.ol_flux_linkage2_y[2, :]-0*res.nl_flux_linkage2_y[2, :], '-+', color='orange', label='c')
         plt.legend()
 
         plt.figure(8)
@@ -277,14 +305,31 @@ def main(argv=None):
         plt.plot(res.phase_current_x, res.phase_current_y[0, :], '-o', color='blue', label='a')
         plt.plot(res.phase_current_x, res.phase_current_y[1, :], '-o', color='green', label='b')
         plt.plot(res.phase_current_x, res.phase_current_y[2, :], '-o', color = 'orange', label='c')
+        plt.plot(res.phase_current_x, res.phase_current_y[3, :], '-o', color='red', label='q')
+        plt.plot(res.phase_current_x, res.phase_current_y[4, :], '-o', color = 'black', label='d')
         plt.legend()
 
         plt.figure(10)
         plt.title('Back EMF')
+        plt.subplot(311)
         plt.plot(res.bemf_x, res.bemf_y[0, :], '-o', color='blue', label='a')
         plt.plot(res.bemf_x, res.bemf_y[1, :], '-o', color='green', label='b')
         plt.plot(res.bemf_x, res.bemf_y[2, :], '-o', color='orange', label='c')
+        plt.plot(res.bemf_x, res.bemf2_y[0, :], '-+', color='blue', label='a')
+        plt.plot(res.bemf_x, res.bemf2_y[1, :], '-+', color='green', label='b')
+        plt.plot(res.bemf_x, res.bemf2_y[2, :], '-+', color='orange', label='c')
         plt.legend()
+        plt.subplot(312)
+        plt.plot(res.bemf_x, res.bemf_y[0, :]+res.bemf2_y[0, :], '-o', color='blue', label='a')
+        plt.plot(res.bemf_x, res.bemf_y[1, :]+res.bemf2_y[1, :], '-o', color='green', label='b')
+        plt.plot(res.bemf_x, res.bemf_y[2, :]+res.bemf2_y[2, :], '-o', color='orange', label='c')
+        plt.subplot(313)
+        plt.plot(res.bemf_x, 2.0*(res.bemf_y[1, :]-res.bemf_y[0, :]), '-o', color='blue', label='ab')
+        plt.plot(res.bemf_x, 2.0*(res.bemf_y[2, :]-res.bemf_y[1, :]), '-o', color='green', label='bc')
+        plt.plot(res.bemf_x, 2.0*(res.bemf_y[0, :]-res.bemf_y[2, :]), '-o', color='orange', label='ca')
+        plt.legend()
+        
+        
         #np.savetxt('bemf.csv', res.bemf_y.transpose(), delimiter=',')
         #np.savetxt('bemf2.csv', res.bemf_x.transpose(), delimiter=',')
 
@@ -295,6 +340,15 @@ def main(argv=None):
         plt.bar(x + 0.2, res.pressure_radial_ol[x], width=0.4, label='On Load')
         plt.legend()
 
+        plt.figure(12) 
+        plt.subplot(211)
+        plt.title('Torque vs Speed')
+        plt.plot(res.torque_speed_rpm, res.torque_speed_tq, label='Torque')
+        plt.legend()
+        plt.subplot(212)
+        plt.plot(res.torque_speed_rpm, res.torque_speed_iq, label='Iq')
+        plt.plot(res.torque_speed_rpm, res.torque_speed_id, label='Id')
+        plt.legend()
 
         plt.show()
 

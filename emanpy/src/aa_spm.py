@@ -41,16 +41,16 @@ sys.path.append('../..')
 import time
 import logging
 
-from emanpys.magnets import *
-from emanpys.materials import *
-from emanpys.rotors import *
-from emanpys.slots import *
-from emanpys.stators import *
-from emanpys.results import *
-from emanpys.windings import *
+from uffema.magnets import *
+from uffema.materials import *
+from uffema.rotors import *
+from uffema.slots import *
+from uffema.stators import *
+from emanpy.results import *
+from uffema.windings import *
 
-from emanpys import spm as machine
-from emanpys.src.constants import *
+from uffema import spm as machine
+from uffema.src.constants import *
 
 
 #from database import db_connector as db
@@ -67,11 +67,11 @@ def main(argv=None):
     try:
         try:
             opts, args = getopt.getopt(argv[1:], "hd:f:r:l:", ["help","dir","file","result-id","log"])
-        except getopt.error, msg:
+        except (getopt.error, msg):
              raise Usage(msg)
         for opt, arg in opts:
             if opt in ("-h", "--help"):
-                print 'aa_spm.py -d [dir_name] -f [file_name] -r [id] -l [level]'
+                print ('aa_spm.py -d [dir_name] -f [file_name] -r [id] -l [level]')
                 sys.exit()
             elif opt in ("-d", "--dir"):
                 dir = arg
@@ -82,7 +82,7 @@ def main(argv=None):
             elif opt in ("-l", "--log"):
                 loglevel = int(arg)
 
-    except Usage, err:
+    except (Usage, err):
         print >>sys.stderr, err.msg
         print >>sys.stderr, "for help use --help"
         return 2
